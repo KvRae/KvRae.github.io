@@ -1,0 +1,11 @@
+.footer-2 {
+  background-color: #231f20;
+  color: rgb(255,255,255);
+}
+
+@media (max-width: 767px) {
+  .footer-2 p {
+    text-align: center;
+  }
+}
+

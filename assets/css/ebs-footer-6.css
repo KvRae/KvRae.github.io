@@ -1,0 +1,40 @@
+div.cal-box {
+  height: 130px;
+}
+
+div.wrapper {
+  overflow: hidden;
+}
+
+div#datepicker {
+  color: #fff !important;
+  background-color: grey;
+  height: 300px;
+  width: 100%;
+}
+
+td.old {
+  color: #77aaff !important;
+}
+
+td.today.day {
+  background-color: #07CC98 !important;
+}
+
+.datepicker {
+  display: block;
+  margin: 0 auto;
+}
+
+.datepicker table tr td.today {
+  background-color: #07CC98 !important;
+}
+
+td.new.day {
+  color: #77aaff !important;
+}
+
+td.day:hover {
+  color: #333;
+}
+
