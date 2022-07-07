@@ -1,0 +1,36 @@
+.custom-btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #858796;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .35rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border: 1px solid #e3e6f0;
+  width: 60px;
+  color: #3a3b45;
+  border-color: #cbd3e9;
+  padding: .25rem .5rem;
+  border-radius: .2rem;
+  margin-left: 5px;
+}
+
+.custom-btn .light-btn:hover {
+  color: #3a3b45;
+  background-color: #dde2f1;
+  border-color: #d4daed;
+}
+
+.custom-btn .light-btn:focus {
+  box-shadow: 0 0 0 .2rem rgba(220,221,225,.5);
+}
+
