@@ -14,7 +14,7 @@
   font-size: 1rem;
   line-height: 1.5;
   border-radius: .35rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   border: 1px solid #e3e6f0;
   width: 60px;
   color: #3a3b45;
@@ -31,6 +31,5 @@
 }
 
 .custom-btn .light-btn:focus {
-  box-shadow: 0 0 0 .2rem rgba(220,221,225,.5);
+  box-shadow: 0 0 0 .2rem rgba(220, 221, 225, .5);
 }
-
