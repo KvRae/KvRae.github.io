@@ -45,7 +45,8 @@
   font-weight: 900;
 }
 
-.is-visible, .blc {
+.is-visible,
+.blc {
   color: white;
 }
 
@@ -69,4 +70,3 @@
 .noSelect {
   pointer-events: none;
 }
-
