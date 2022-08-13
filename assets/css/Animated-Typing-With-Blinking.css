@@ -45,9 +45,8 @@
   font-weight: 900;
 }
 
-.is-visible,
-.blc {
-  color: white;
+.is-visible, .blc {
+  color: gery;
 }
 
 .animated-text {
@@ -70,3 +69,4 @@
 .noSelect {
   pointer-events: none;
 }
+
