@@ -1,0 +1,14 @@
+.spcl-abt {
+  display: inline-block;
+  float: left;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 60px;
+  color: #ffffff;
+}
+
+.spcl-abt:hover {
+  color: #000a3f;
+  transition: color 0.3s ease;
+}
+
