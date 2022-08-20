@@ -305,7 +305,10 @@
             </ol>
         </div>!-->
         <p class="text-center">Oops it looks like it's empty here! why don't you fill it for me, please</p>
-        <div class="text-center"><a class="btn btn-secondary btn-lg text-center" role="button" style="text-align: center;" href="Form.html">Recommend</a></div>
+        <div class="text-center"><a data-target="#modal-1" data-toggle="modal">
+            <button class="btn btn-primary" data-bss-hover-animate="pulse" id="button-1" type="button"><img style="width: 20px;height: 20px;transform: rotate(270deg) translateX(2px);" src="assets/img/arrowwhite.gif"><span>
+                <strong>Recommend</strong></span><img style="width: 20px;height: 20px;transform: rotate(90deg) translateX(-2px);" src="assets/img/arrowwhite.gif"></button></a>
+        </div>
     </section>
 
     <footer class="text-center footer" data-aos="fade-up">
@@ -341,6 +344,38 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal fade text-center" role="dialog" tabindex="-1" id="modal-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-white"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <form data-bss-recipient="00d361fcafcb6026508145f34150b465" data-bss-redirect-url="index.html">
+                        <div class="form-group">
+                            <section class="position-relative py-4 py-xl-5" style="margin-top: -38px;">
+                                <div class="card">
+                                    <div class="card-body text-center bg-primary p-sm-5">
+                                        <h2 class="font-weight-bold mb-3" style="padding-bottom: 0px;color: var(--light);">Recommend</h2>
+                                        <form method="post">
+                                            <hr class="star-light">
+                                            <div class="mb-3"><input class="form-control" type="text" id="name-2" name="name" placeholder="Name"></div><input class="form-control" type="email" name="Email" placeholder="Email">
+                                            <div class="mb-3"></div>
+                                            <div class="mb-3"><textarea class="form-control" id="message-2" name="Feedback" rows="6" placeholder="Feedback"></textarea>
+                                                <p style="margin-top: 16px;padding-bottom: 3px;">After reviewing your message, it will be added on the testimonials section. Thank you&nbsp;</p>
+                                            </div>
+                                            <div class="btn-group" role="group"><button class="btn btn-secondary d-block w-100" type="submit">Submit&nbsp;<i class="fa fa-check"></i> </button></div>
+                                            <div></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="d-lg-none scroll-to-top position-fixed rounded"><a
             class="text-center text-white d-block js-scroll-trigger rounded" href="#page-top"><i
                 class="fa fa-chevron-up"></i></a></div>
