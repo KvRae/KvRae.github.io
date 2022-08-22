@@ -137,8 +137,8 @@
 
 .loader {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 30px;
+  height: 30px;
   position: relative;
   border: 4px solid #Fff;
   animation: loader 2s infinite ease;
