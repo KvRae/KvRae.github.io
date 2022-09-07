@@ -20,5 +20,7 @@ used to manipulate animations .
 
 ## Contributing
 
-Staring this repositry will be a much pleasure for me .
-Found a bug on my site? Think there's a feature missing? Found a typo in a blog post? File an issue or send me a pull request!
+Giving me a star at this repositry will be a joy for me.
+Found a bug on my website? 
+Think there's a feature missing? 
+Found a typo in a blog post? File an issue or send me a pull request!
