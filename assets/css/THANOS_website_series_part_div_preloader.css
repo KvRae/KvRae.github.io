@@ -1,10 +1,12 @@
 .display-cell {
+  overflow: hidden;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
 
 .div-caption {
+  overflow: hidden;
   font-size: 26px;
   text-align: center;
   margin-left: auto;
@@ -13,6 +15,7 @@
 }
 
 .div-loading {
+  overflow: hidden;
   font-size: 22px;
   margin-top: 30px;
   text-align: center;
@@ -22,6 +25,7 @@
 }
 
 .div-preloader {
+  overflow: hidden;
   position: fixed;
   margin: 0;
   top: 0;
@@ -34,6 +38,7 @@
 }
 
 .cssload-thecube {
+  overflow: hidden;
   width: 73px;
   height: 73px;
   margin: 0 auto;
@@ -136,6 +141,7 @@
 }
 
 .loader {
+  overflow: hidden;
   display: inline-block;
   width: 30px;
   height: 30px;
