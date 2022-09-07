@@ -10,9 +10,9 @@ This is the source code to my personal blog and website.
 
 Built using [Bootstrap Studio](https://bootstrapstudio.io/).
 
-### Sass/CSS
+### Bootstrap/CSS
 
-[Sass](https://sass-lang.com/) is used to style the website. [Susy](https://www.oddbird.net/susy/) is used as the grid system to give me full control of the website.
+[Bootstrap](https://getbootstrap.com/) is used to style the website. 
 
 ### JS (JQuery)
 
