@@ -15,7 +15,7 @@ Built using [Bootstrap Studio](https://bootstrapstudio.io/).
 
 ### JS (JQuery)
 
-Nothing fancy here, just [pure.js](https://pure-js.com/).
+used to manipulate animations .
 
 ## Contributing
 
