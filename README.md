@@ -23,4 +23,4 @@ used to manipulate animations .
 Giving me a star at this repositry will be a joy for me.
 Found a bug on my website? 
 Think there's a feature missing? 
-File an issue or send me an email or pull a request!
+File an issue or send me an email or a pull request!
