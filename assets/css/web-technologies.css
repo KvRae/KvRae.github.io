@@ -4,11 +4,11 @@
   margin-bottom: 5px;
   text-align: center;
   font-size: 60px;
-  color: #ffffff;
+  color: #bbbbbb;
 }
 
 .spcl-abt:hover {
-  color: #000a3f;
+  color: #9f5ad8;
   transition: color 0.3s ease;
 }
 

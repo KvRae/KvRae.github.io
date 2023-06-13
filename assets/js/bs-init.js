@@ -1,63 +1,71 @@
+
 if (window.innerWidth < 768) {
-	$('[data-bss-disabled-mobile]').removeClass('animated').removeAttr('data-aos data-bss-hover-animate');
+	[].slice.call(document.querySelectorAll('[data-bss-disabled-mobile]')).forEach(function (elem) {
+		elem.classList.remove('animated');
+		elem.removeAttribute('data-bss-hover-animate');
+		elem.removeAttribute('data-aos');
+		elem.removeAttribute('data-bss-parallax-bg');
+		elem.removeAttribute('data-bss-scroll-zoom');
+	});
 }
 
-$(document).ready(function(){
-	AOS.init();
+document.addEventListener('DOMContentLoaded', function() {
+	if ('AOS' in window) {
+		AOS.init();
+	}
 
-	$('[data-bss-hover-animate]')
-		.mouseenter( function(){ var elem = $(this); elem.addClass('animated ' + elem.attr('data-bss-hover-animate')) })
-		.mouseleave( function(){ var elem = $(this); elem.removeClass('animated ' + elem.attr('data-bss-hover-animate')) });
+	var hoverAnimationTriggerList = [].slice.call(document.querySelectorAll('[data-bss-hover-animate]'));
+	var hoverAnimationList = hoverAnimationTriggerList.forEach(function (hoverAnimationEl) {
+		hoverAnimationEl.addEventListener('mouseenter', function(e){ e.target.classList.add('animated', e.target.dataset.bssHoverAnimate) });
+		hoverAnimationEl.addEventListener('mouseleave', function(e){ e.target.classList.remove('animated', e.target.dataset.bssHoverAnimate) });
+	});
 
 (function(){
 
-	if(!('requestAnimationFrame' in window)) return;
-	if(/Mobile|Android/.test(navigator.userAgent)) return;
+	if (!('requestAnimationFrame' in window)) return;
 
 	var backgrounds = [];
+	var parallaxBackgrounds = document.querySelectorAll('[data-bss-parallax-bg]');
 
-	$('[data-bss-parallax-bg]').each(function(){
-		var el = $(this);
-		var bg = $('<div>');
+	for (var el of parallaxBackgrounds) {
+		var bg = document.createElement('div');
 
-		bg.css({
-			backgroundImage: el.css('background-image'),
-			backgroundSize: 'cover',
-			backgroundPosition: 'center',
-			position: 'absolute',
-			height:'200%',
-			width:'100%',
-			top:0, left:0,
-			zIndex: -100
-		});
+		bg.style.backgroundImage = el.style.backgroundImage;
+		bg.style.backgroundSize = 'cover';
+		bg.style.backgroundPosition = 'center';
+		bg.style.position = 'absolute';
+		bg.style.height = '200%';
+		bg.style.width = '100%';
+		bg.style.top = 0;
+		bg.style.left = 0;
+		bg.style.zIndex = -100;
 
-		bg.appendTo(el);
-		backgrounds.push(bg[0]);
+		el.appendChild(bg);
+		backgrounds.push(bg);
 
-		el.css({
-			position:'relative',
-			background:'transparent',
-			overflow: 'hidden',
-		});
-	});
+		el.style.position = 'relative';
+		el.style.background = 'transparent';
+		el.style.overflow = 'hidden';
+	}
 
-	if(!backgrounds.length) return;
+	if (!backgrounds.length) return;
 
 	var visible = [];
 	var scheduled;
 
-	$(window).on('scroll resize', scroll);
+	window.addEventListener('scroll', scroll);
+	window.addEventListener('resize', scroll);
 
 	scroll();
 
-	function scroll(){
+	function scroll() {
 
 		visible.length = 0;
 
 		for(var i = 0; i < backgrounds.length; i++){
 			var rect = backgrounds[i].parentNode.getBoundingClientRect();
 
-			if(rect.bottom > 0 && rect.top < window.innerHeight){
+			if (rect.bottom > 0 && rect.top < window.innerHeight) {
 				visible.push({
 					rect: rect,
 					node: backgrounds[i]
@@ -68,7 +76,7 @@ $(document).ready(function(){
 
 		cancelAnimationFrame(scheduled);
 
-		if(visible.length){
+		if (visible.length) {
 			scheduled = requestAnimationFrame(update);
 		}
 
@@ -91,55 +99,52 @@ $(document).ready(function(){
 
 (function(){
 
-	if(!('requestAnimationFrame' in window)) return;
-	if(/Mobile|Android/.test(navigator.userAgent)) return;
+	if (!('requestAnimationFrame' in window)) return;
 
 	var backgrounds = [];
 	var backgroundToSpeed = new WeakMap;
+	var parallaxBackgrounds = document.querySelectorAll('[data-bss-scroll-zoom]');
 
-	$('[data-bss-scroll-zoom]').each(function(){
-		var el = $(this);
-		var bg = $('<div>');
+	for (var el of parallaxBackgrounds) {
+		var bg = document.createElement('div');
 
-		bg.css({
-			backgroundImage: el.css('background-image'),
-			backgroundSize: 'cover',
-			backgroundPosition: 'center',
-			position: 'absolute',
-			height:'100%',
-			width:'100%',
-			top:0, left:0,
-			zIndex: -100
-		});
+		bg.style.backgroundImage = el.style.backgroundImage;
+		bg.style.backgroundSize = 'cover';
+		bg.style.backgroundPosition = 'center';
+		bg.style.position = 'absolute';
+		bg.style.height = '100%';
+		bg.style.width = '100%';
+		bg.style.top = 0;
+		bg.style.left = 0;
+		bg.style.zIndex = -100;
 
-		bg.appendTo(el);
-		backgrounds.push(bg[0]);
-		backgroundToSpeed.set(bg[0], el.data('bss-scroll-zoom-speed') || 1);
+		el.appendChild(bg);
+		backgrounds.push(bg);
+		backgroundToSpeed.set(bg, el.getAttribute('data-bss-scroll-zoom-speed') || 1);
 
-		el.css({
-			position:'relative',
-			background:'transparent',
-			overflow: 'hidden',
-		});
-	});
+		el.style.position = 'relative';
+		el.style.background = 'transparent';
+		el.style.overflow = 'hidden';
+	}
 
-	if(!backgrounds.length) return;
+	if (!backgrounds.length) return;
 
 	var visible = [];
 	var scheduled;
 
-	$(window).on('scroll resize', scroll);
+	window.addEventListener('scroll', scroll);
+	window.addEventListener('resize', scroll);
 
 	scroll();
 
-	function scroll(){
+	function scroll() {
 
 		visible.length = 0;
 
-		for(var i = 0; i < backgrounds.length; i++){
+		for (var i = 0; i < backgrounds.length; i++) {
 			var rect = backgrounds[i].parentNode.getBoundingClientRect();
 
-			if(rect.bottom > 0 && rect.top < window.innerHeight){
+			if (rect.bottom > 0 && rect.top < window.innerHeight) {
 				visible.push({
 					rect: rect,
 					node: backgrounds[i],
@@ -151,7 +156,7 @@ $(document).ready(function(){
 
 		cancelAnimationFrame(scheduled);
 
-		if(visible.length){
+		if (visible.length) {
 			scheduled = requestAnimationFrame(update);
 		}
 
@@ -172,4 +177,4 @@ $(document).ready(function(){
 	}
 
 })();
-});
+}, false);

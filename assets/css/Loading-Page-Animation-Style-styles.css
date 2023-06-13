@@ -1,0 +1,24 @@
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+.loading-icon {
+  height: 100%;
+  min-height: 100%;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  -ms-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: center;
+  -ms-align-items: center;
+  -webkit-justify-content: center;
+  background-color: #f4f4f4;
+}
+
+i.fa.fa-spinner.fa-spin.fa-5x.fa-fw {
+  color: #6a6a6a;
+}
+
