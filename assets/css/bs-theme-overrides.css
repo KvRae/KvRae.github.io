@@ -3,5 +3,6 @@
   --bs-link-color-rgb: 55,90,127;
   --bs-link-hover-color: #243c54;
   --bs-link-hover-color-rgb: 36,60,84;
+  --bs-link-decoration: blink;
 }
 
