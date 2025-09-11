@@ -1,0 +1,25 @@
+/* Import the font */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Bebas', sans-serif;
+}
+
+@theme{
+    --font-bebas: 'Bebas Neue', cursive;
+}
+
+:root {
+    --color-primary: #FFCF01;
+    --color-secondary: #EDEDED;
+    --color-background: #282828;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-secondary); /* optional default text color */
+    font-family: var(--font-bebas), sans-serif;
+    margin: 0;
+    padding: 0;
+}

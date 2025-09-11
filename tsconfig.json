@@ -1,0 +1,15 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "module": "esnext",
+    "target": "esnext",
+    "resolveJsonModule": true,
+    "allowJs": true
+  }
+}
