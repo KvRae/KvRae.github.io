@@ -1,5 +1,5 @@
-import { useState } from "react";
-import TerminalWindow from "./TerminalWindow";
+import {useEffect, useRef, useState} from "react";
+import TerminalWindow from "../components/TerminalWindow.tsx";
 import DockBar from "../components/DockBar";
 import Window from "../components/Window";
 import terminalIcon from '../assets/terminal-icon.png';
@@ -7,13 +7,24 @@ import DesktopImage from '../assets/desktop-background.gif';
 import FolderIcon from '../assets/folder-icon.png';
 import ProjectsWindow from "../components/ProjectWindow.tsx";
 import ExperienceWindow from "../components/ExperienceWindow";
+import backgroundAudio from '../assets/audio.mp3';
 
-export default function Desktop() {
+export default function DesktopScreen() {
     const [terminalOpen, setTerminalOpen] = useState(false);
     const [windows, setWindows] = useState<{id: string, title: string, url: string}[]>([]);
 
     const [projectsOpen, setProjectsOpen] = useState(false);
     const [experienceOpen, setExperienceOpen] = useState(false);
+
+    const [musicPlaying, setMusicPlaying] = useState(true);
+    const audioRef = useRef<HTMLAudioElement>(null);
+
+    useEffect(() => {
+        if (audioRef.current) {
+            if (musicPlaying) audioRef.current.play();
+            else audioRef.current.pause();
+        }
+    }, [musicPlaying]);
 
     const handleLogout = () => {
         window.location.reload();
@@ -33,7 +44,8 @@ export default function Desktop() {
 
     return (
         <div className="bg-blue-600 h-screen w-screen relative flex flex-col justify-between">
-            {/* Desktop area */}
+            <audio ref={audioRef} src={backgroundAudio} loop />
+            {/* DesktopScreen area */}
             <div
                 className="flex-1 relative bg-cover bg-center"
                 style={{ backgroundImage: `url(${DesktopImage})` }}
@@ -86,6 +98,8 @@ export default function Desktop() {
 
             {/* DockBar */}
             <DockBar
+                onToggleMusic={() => setMusicPlaying(prev => !prev)}
+                musicPlaying={musicPlaying}
                 onLogout={handleLogout}
                 onOpenProfile={handleOpenProfile}
             />

@@ -17,7 +17,7 @@
   {
     "name": "BackAppX",
     "description": "BaaS platform (Express, MongoDB, Flutter, Docker)",
-    "link": "https://www.npmjs.com/package/backappx"
+    "link": "hhttps://backappx.github.io/BackAppX-Website/"
   },
   {
     "name": "Slikoo",
@@ -32,6 +32,6 @@
   {
     "name": "English Made Easy",
     "description": "E-Learning Platform (HTML, CSS, JavaScript, Sass)",
-    "link": "https://kvrae.me/EnglishMadeEasy"
+    "link": "https://kvrae.github.io/EnglishMadeEasy"
   }
 ]

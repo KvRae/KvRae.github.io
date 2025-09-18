@@ -1,7 +1,7 @@
 // src/SplashScreen.tsx
 import { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
-import Desktop from "./Desktop";
+import DesktopScreen from "./DesktopScreen.tsx";
 import avatarImage from '../assets/avatar-pixels.png';
 import PasswordInput from "../components/PasswordInput.tsx";
 
@@ -20,7 +20,7 @@ export default function SplashScreen() {
         }
     };
 
-    if (authenticated) return <Desktop />;
+    if (authenticated) return <DesktopScreen />;
 
     return (
         <div className="h-screen w-screen bg-gray-900 flex flex-col items-center justify-center">

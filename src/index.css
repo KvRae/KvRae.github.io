@@ -4,4 +4,31 @@ body {
     font-family: 'Pixelify Sans', sans-serif;
     font-weight: 400;
     font-style: normal;
+    cursor: url("./assets/Black-Pixel-Mouse-Cursor-Arow-Fixed.png") auto;
+}
+
+/* Global custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;               /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;       /* background track */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #facc15; /* yellow thumb */
+    border-radius: 5px;
+    border: 2px solid #1a1a1a; /* optional padding */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #eab308;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #facc15 #1a1a1a;
 }

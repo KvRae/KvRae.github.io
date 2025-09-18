@@ -8,9 +8,11 @@ import mediumLogo from '../assets/medium-logo.png';
 interface DockBarProps {
     onLogout: () => void;
     onOpenProfile: (profile: string) => void;
+    onToggleMusic: () => void;
+    musicPlaying: boolean;
 }
 
-export default function DockBar({ onLogout, onOpenProfile }: DockBarProps) {
+export default function DockBar({ onLogout, onOpenProfile, onToggleMusic, musicPlaying }: DockBarProps) {
     const [time, setTime] = useState(new Date());
 
     useEffect(() => {
@@ -47,7 +49,11 @@ export default function DockBar({ onLogout, onOpenProfile }: DockBarProps) {
 
             {/* Right side info */}
             <div className="flex items-center space-x-4 text-gray-300">
-                <FiMusic size={20} />
+                <FiMusic
+                    size={24}
+                    className={`cursor-pointer ${musicPlaying ? "text-green-400" : "text-gray-400"}`}
+                    onClick={onToggleMusic}
+                />
 
                 <div className="flex items-center space-x-1"><FiMapPin /> <span>Tunisia</span></div>
                 <div>{time.toLocaleTimeString('en-US', { timeZone: 'Africa/Tunis', hour12: false })}</div>
