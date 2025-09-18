@@ -1,0 +1,42 @@
+{
+  "help": {
+    "description": "Display available commands",
+    "output": "help       Show this help menu\nwhoami     Display user profile\nskills     List my technical skills\nexperience Show my work experience\nprojects   List notable projects\neducation  Show education background\ncontact    Show contact information\nclear      Clear the terminal\nlogout     Logout / reset the desktop\nexit       Close the terminal window"
+  },
+  "exit": {
+    "description": "Close the terminal window",
+    "output": "__EXIT__"
+  },
+  "logout": {
+    "description": "Logout / reset the desktop",
+    "output": "__LOGOUT__"
+  },
+  "whoami": {
+    "description": "Display information about the user",
+    "output": "Karam MANNAI\nMotivated Software Engineer with a strong foundation in computer science and hands-on experience in building modern, responsive, and user-friendly applications. Skilled in translating UI/UX requirements into functional web interfaces and adept at problem-solving, writing clean code, and collaborating within Agile environments."
+  },
+  "skills": {
+    "description": "List technical skills",
+    "output": "Languages & Platforms: Kotlin, Java, JavaScript, Python\nArchitecture: MVVM, Clean Architecture, UML\nUI/UX & Tools: Material Design, Jetpack Compose, Figma\nFrontend: Angular (basic), Next.js (basic), HTML, CSS, Tailwind\nBackend & DevOps: Springboot, MongoDB, PostgreSQL (basic), Docker, GitHub Actions, CI/CD"
+  },
+  "experience": {
+    "description": "Show work experience",
+    "output": "UI Developer, PlutopalAI (Nov 2024 – Jul 2025) - React & Figma UI\nMobile Engineer, Machinestalk (Jan 2024 – Jul 2024) - Flutter cross-platform\nAndroid Developer, Slikoo (Jul 2023 – Dec 2023) - Flutter & Firebase\nFull Stack Developer, BackAppX (Jan 2023 – Jun 2023) - Express/MongoDB, Flutter SDK\nAndroid Developer, Easy Kitchen (Sep 2022 – Jan 2023)\nAndroid Game Developer, BeadsLeads (Feb 2021 – Jul 2022) - Unity3D & Playfab"
+  },
+  "projects": {
+    "description": "List notable projects",
+    "output": "AI Sign Language Translator: Gesture Recognition Web App (Node.js, Express.js, TensorFlow, React) - https://kvrae.github.io/Sign-Language-Translator/\nAiFashionWeek MVP: Social Fashion App - https://aifashionweek.ai/\nMINE: Android Indoor Navigation Module (Kotlin, Jetpack Compose, RoomDB, Firebase) - https://kvrae.github.io/MINE-Docs/\nSlikoo: E-commerce mobile platform - https://www.slikoo.com\nBackAppX: BaaS platform (ReactJS, NodeJS, ExpressJS, MongoDB, Flutter, Docker) - JS SDK: https://www.npmjs.com/package/backappx, Flutter SDK: https://pub.dev/packages/backappx\nBeadsLeads: Android Game - Playstore: https://appgallery.huawei.com/app/C107602151, Itch.io: https://kvrae.itch.io/beads-leads\nEnglish Made Easy: E-Learning Platform - https://kvrae.me/EnglishMadeEasy"
+  },
+  "education": {
+    "description": "Show education background",
+    "output": "Bachelor's Degree in Computer Engineering, ESPRIT, School of Engineering (Sep 2021 – Oct 2024) - Graduated with honors, Ariana, Tunisia"
+  },
+  "contact": {
+    "description": "Display contact information",
+    "output": "Karam MANNAI\nEmail: karam.mannai@hotmail.com\nPhone: +216 99026017\nLocation: Tunisia\nPortfolio: https://kvrae.github.io\nLinkedIn: linkedin.com/in/karam-mannai\nGitHub: github.com/KvRae\nMedium: medium.com/@karammannai"
+  },
+  "clear": {
+    "description": "Clear the terminal",
+    "output": "__CLEAR__"
+  }
+}

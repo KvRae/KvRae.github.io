@@ -1,0 +1,37 @@
+[
+  {
+    "name": "AI Sign Language Translator",
+    "description": "Node.js, Express.js, TensorFlow, React",
+    "link": "https://kvrae.github.io/Sign-Language-Translator/"
+  },
+  {
+    "name": "AiFashionWeek MVP",
+    "description": "Social Fashion Application",
+    "link": "https://aifashionweek.ai/"
+  },
+  {
+    "name": "MINE",
+    "description": "Android Indoor Navigation Module (Kotlin, Jetpack Compose, RoomDB, Firebase)",
+    "link": "https://kvrae.github.io/MINE-Docs/"
+  },
+  {
+    "name": "BackAppX",
+    "description": "BaaS platform (Express, MongoDB, Flutter, Docker)",
+    "link": "https://www.npmjs.com/package/backappx"
+  },
+  {
+    "name": "Slikoo",
+    "description": "E-commerce mobile platform (React, Symfony, Flutter)",
+    "link": "https://www.slikoo.com"
+  },
+  {
+    "name": "BeadsLeads",
+    "description": "Android Game (C#, Unity3D, MS Azure Playfab, Android, Web)",
+    "link": "https://kvrae.itch.io/beads-leads"
+  },
+  {
+    "name": "English Made Easy",
+    "description": "E-Learning Platform (HTML, CSS, JavaScript, Sass)",
+    "link": "https://kvrae.me/EnglishMadeEasy"
+  }
+]

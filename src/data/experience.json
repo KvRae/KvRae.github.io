@@ -1,0 +1,58 @@
+[
+  {
+    "role": "UI Developer",
+    "company": "PlutopalAI",
+    "period": "Nov 2024 – Jul 2025",
+    "description": [
+      "Created a clean, responsive UI from Figma designs using React.",
+      "Translated UI/UX requirements into functional web interfaces."
+    ]
+  },
+  {
+    "role": "Mobile Engineer",
+    "company": "Machinestalk",
+    "period": "Jan 2024 – Jul 2024",
+    "description": [
+      "Built cross-platform car-sharing features in Flutter and Google Maps API with consistent UI/UX.",
+      "Integrated REST APIs for booking, tracking, and vehicle control.",
+      "Worked closely with backend and design teams to deliver smooth user flows."
+    ]
+  },
+  {
+    "role": "Android Developer",
+    "company": "Slikoo",
+    "period": "Jul 2023 – Dec 2023",
+    "description": [
+      "Developed cross-platform app using Flutter and Firebase (Auth, Firestore).",
+      "Implemented real-time features and optimized performance across Android/iOS.",
+      "Participated in Agile sprints, code reviews, and QA testing sessions."
+    ]
+  },
+  {
+    "role": "Full Stack Developer",
+    "company": "BackAppX",
+    "period": "Jan 2023 – Jun 2023",
+    "description": [
+      "Led a team of 5 to develop a BaaS platform and publish SDKs to npm/pub.dev.",
+      "Built Express/MongoDB backend and Flutter-based SDK."
+    ]
+  },
+  {
+    "role": "Android Developer",
+    "company": "Easy Kitchen",
+    "period": "Sep 2022 – Jan 2023",
+    "description": [
+      "Designed and developed a recipe application."
+    ]
+  },
+  {
+    "role": "Android Game Developer",
+    "company": "BeadsLeads",
+    "period": "Feb 2021 – Jul 2022",
+    "description": [
+      "Organized development workflow and task distribution.",
+      "Developed and launched 2D game on Itch.io and Huawei AppGallery using Unity3D and PlayFab.",
+      "Managed entire game lifecycle from concept to release."
+    ]
+  }
+]
