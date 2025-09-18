@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Firas H.",
+    "image": "img/firas.jpg",
+    "message": "Your website is amazing.",
+    "date": "September 14, 2022"
+  },
+  {
+    "name": "Nader A.",
+    "image": "img/ayed.jpg",
+    "message": "Great, good job KAV, I really like your work, keep it up.",
+    "date": "April 21, 2023"
+  },
+
+  {
+    "name": "Med Yassin K.",
+    "image": "img/avatar_khabthani.jpg",
+    "message": "I worked with him in a project named Easy Kitchen. Professional co-worker, I recommend...",
+    "date": "February 28, 2023"
+  },
+ {
+    "name": "Fedi A.",
+    "image": "/img/fedi.jpg",
+    "message": "Highly Skilled Person, I enjoyed working with him in several Projects.",
+    "date": "November 14, 2023"
+  },
+  {
+    "name": "Mohamed K.",
+    "image": "img/slackpic.png",
+    "message": "Collaborating with Karam on indoor navigation library was a pleasure, he's incredibly creative.",
+    "date": "July 13, 2024"
+  }
+]

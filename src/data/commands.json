@@ -1,7 +1,7 @@
 {
   "help": {
     "description": "Display available commands",
-    "output": "help       Show this help menu\nwhoami     Display user profile\nskills     List my technical skills\nexperience Show my work experience\nprojects   List notable projects\neducation  Show education background\ncontact    Show contact information\nclear      Clear the terminal\nlogout     Logout / reset the desktop\nexit       Close the terminal window"
+    "output": "help       Show this help menu\nwhoami     Display user profile\nskills     List my technical skills\nexperience Show my work experience\nprojects   List notable projects\neducation  Show education background\ncontact    Show contact information\ntestimonials Show testimonials about me\nclear      Clear the terminal\nlogout     Logout / reset the desktop\nexit       Close the terminal window"
   },
   "exit": {
     "description": "Close the terminal window",
@@ -34,6 +34,10 @@
   "contact": {
     "description": "Display contact information",
     "output": "Karam MANNAI\nEmail: karam.mannai@hotmail.com\nPhone: +216 99026017\nLocation: Tunisia\nPortfolio: https://kvrae.github.io\nLinkedIn: linkedin.com/in/karam-mannai\nGitHub: github.com/KvRae\nMedium: medium.com/@karammannai"
+  },
+  "testimonials": {
+    "description": "Show testimonials about me",
+    "output": "Nader A. (April 21, 2023): \"Great, good job KAV, I really like your work, keep it up.\"\nFiras H. (September 14, 2022): \"Your website is amazing.\"\nMed Yassin K. (February 28, 2023): \"I worked with him in a project named Easy Kitchen. Professional co-worker, I recommend...\"\nFedi A. (November 14, 2023): \"Highly Skilled Person, I enjoyed working with him in several Projects.\"\nMohamed K. (July 13, 2024): \"Collaborating with Karam on indoor navigation library was a pleasure, he's incredibly creative.\""
   },
   "clear": {
     "description": "Clear the terminal",

@@ -7,6 +7,8 @@ import DesktopImage from '../assets/desktop-background.gif';
 import FolderIcon from '../assets/folder-icon.png';
 import ProjectsWindow from "../components/ProjectWindow.tsx";
 import ExperienceWindow from "../components/ExperienceWindow";
+import TestimonialsWindow from "../components/TestimonialsWindow.tsx";
+import TestimonialsIcon from "../assets/rating.png";
 import backgroundAudio from '../assets/audio.mp3';
 
 export default function DesktopScreen() {
@@ -15,6 +17,8 @@ export default function DesktopScreen() {
 
     const [projectsOpen, setProjectsOpen] = useState(false);
     const [experienceOpen, setExperienceOpen] = useState(false);
+
+    const [testimonialsOpen, setTestimonialsOpen] = useState(false);
 
     const [musicPlaying, setMusicPlaying] = useState(true);
     const audioRef = useRef<HTMLAudioElement>(null);
@@ -78,12 +82,22 @@ export default function DesktopScreen() {
                         <img src={FolderIcon} alt="Experience Folder" className="w-16 h-16" />
                         <span className="text-white text-center mt-1">Experience</span>
                     </button>
+
+                    {/* Testimonials Folder */}
+                    <button
+                        onClick={() => setTestimonialsOpen(true)}
+                        className="flex flex-col items-center bg-transparent border-none focus:outline-none"
+                    >
+                        <img src={TestimonialsIcon} alt="Testimonials Folder" className="w-16 h-16" />
+                        <span className="text-white text-center mt-1">Testimonials</span>
+                    </button>
                 </div>
 
                 {/* Windows */}
                 {terminalOpen && <TerminalWindow onClose={() => setTerminalOpen(false)} />}
                 {projectsOpen && <ProjectsWindow onClose={() => setProjectsOpen(false)} />}
                 {experienceOpen && <ExperienceWindow onClose={() => setExperienceOpen(false)} />}
+                {testimonialsOpen && (<TestimonialsWindow onClose={() => setTestimonialsOpen(false)} />)}
 
                 {/* Profile Iframe Windows */}
                 {windows.map(win => (
