@@ -1,69 +1,36 @@
-# React + TypeScript + Vite
+# KvRae Portfolio (React v2)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 A personal portfolio designed to feel like an **operating system desktop**, complete with terminal commands, draggable windows, a dock, and interactive folders for **Projects** and **Experience**.
 
-Currently, two official plugins are available:
+Deployed on **GitHub Pages** using GitHub Actions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
+- 🖥️ **Desktop-like UI** with draggable windows
+- 📂 **Projects & Experience Folders** showing detailed cards
+- 💻 **Custom Terminal** with interactive commands (`help`, `skills`, `projects`, etc.)
+- 🎵 **Background Music** toggle via dock music icon
+- 🎨 **Custom Scrollbar & Pixel Cursor** for a retro vibe
+- 🔑 **Login Splash Screen** with password authentication
+- ⚡ Boot/Startup loading screen simulation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
+- **React + TypeScript**
+- **Vite** (bundler)
+- **TailwindCSS** for styling
+- **Framer Motion** for animations
+- **React Icons** for UI icons
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📦 Installation & Setup
+Clone the repo and install dependencies:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+git clone https://github.com/KvRae/KvRae.github.io.git
+cd KvRae.github.io
+git checkout react-v2
+npm install
