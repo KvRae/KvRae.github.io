@@ -1,6 +1,7 @@
 // src/components/EmailWindow.tsx
 import { type FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
+import {EMAIL_PUBLIC_KEY, EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID} from "../utils/consts.ts";
 
 interface EmailWindowProps {
     onClose: () => void;
@@ -33,10 +34,10 @@ export default function EmailWindow({
 
         emailjs
             .send(
-                "service_hvb60hk",   // Replace with your EmailJS service ID
-                "template_mkud39b",  // Replace with your EmailJS template ID
+                EMAIL_SERVICE_ID,   // Replace with your EmailJS service ID
+                EMAIL_TEMPLATE_ID,  // Replace with your EmailJS template ID
                 templateParams,
-                "VoL9XPAeT3tF8_eV3"    // Replace with your EmailJS public key
+                EMAIL_PUBLIC_KEY// Replace with your EmailJS public key
             )
             .then(
                 (response) => {

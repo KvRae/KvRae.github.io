@@ -13,11 +13,13 @@ import EmailWindow from "../components/EmailWindow";
 
 import TestimonialsIcon from "../assets/rating.png";
 import backgroundAudio from '../assets/audio.mp3';
+import AboutWindow from "../components/AboutWindow.tsx";
 
 export default function DesktopScreen() {
     const [terminalOpen, setTerminalOpen] = useState(false);
     const [windows, setWindows] = useState<{id: string, title: string, url: string}[]>([]);
 
+    const [aboutOpen, setAboutOpen] = useState(false);
     const [projectsOpen, setProjectsOpen] = useState(false);
     const [experienceOpen, setExperienceOpen] = useState(false);
     const [emailOpen, setEmailOpen] = useState(false);
@@ -69,6 +71,14 @@ export default function DesktopScreen() {
                         <span className="text-white text-xs sm:text-sm md:text-base mt-1">Terminal</span>
                     </button>
 
+                    <button
+                        onClick={() => setAboutOpen(true)}
+                        className="flex flex-col items-center bg-transparent border-none focus:outline-none"
+                    >
+                        <img src={FolderIcon} alt="About Icon" className="w-16 h-16" />
+                        <span className="text-white text-center mt-1">About Me</span>
+                    </button>
+
                     {/* Projects Folder */}
                     <button
                         onClick={() => setProjectsOpen(true)}
@@ -109,6 +119,7 @@ export default function DesktopScreen() {
 
                 {/* Windows */}
                 {terminalOpen && <TerminalWindow onClose={() => setTerminalOpen(false)} />}
+                {aboutOpen && <AboutWindow onClose={() => setAboutOpen(false)} />}
                 {projectsOpen && <ProjectsWindow onClose={() => setProjectsOpen(false)} />}
                 {experienceOpen && <ExperienceWindow onClose={() => setExperienceOpen(false)} />}
                 {testimonialsOpen && (<TestimonialsWindow onClose={() => setTestimonialsOpen(false)} />)}
