@@ -56,8 +56,9 @@ export default function DockBar({ onLogout, onOpenProfile, onToggleMusic, musicP
                 />
 
                 <div className="flex items-center space-x-1">
-                    <FiMapPin size={16} />
-                    <span>Tun</span>
+                    <FiMapPin size="1em" />
+                    <span className="sm:hidden">Tun</span>
+                    <span className="hidden sm:inline">Tunisia</span>
                 </div>
 
                 <div>{time.toLocaleTimeString('en-US', { timeZone: 'Africa/Tunis', hour12: false, hour: '2-digit', minute: '2-digit' })}</div>

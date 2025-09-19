@@ -1,12 +1,16 @@
-import {type FormEvent, useState} from "react";
-
+// src/components/EmailWindow.tsx
+import { type FormEvent, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 interface EmailWindowProps {
     onClose: () => void;
     defaultRecipient?: string;
 }
 
-export default function EmailWindow({ onClose, defaultRecipient = "karam.mannai@hotmail.com" }: EmailWindowProps) {
+export default function EmailWindow({
+                                        onClose,
+                                        defaultRecipient = "karam.mannai@hotmail.com",
+                                    }: EmailWindowProps) {
     const [sender, setSender] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
@@ -14,33 +18,57 @@ export default function EmailWindow({ onClose, defaultRecipient = "karam.mannai@
 
     const handleSend = (e: FormEvent) => {
         e.preventDefault();
+
         if (!sender || !subject || !message) {
             setStatus("Please fill in all fields.");
             return;
         }
 
-        // Integrate email service here
-        console.log("Sending email:", { from: sender, to: defaultRecipient, subject, message });
+        const templateParams = {
+            from_email: sender,
+            to_email: defaultRecipient,
+            subject,
+            message,
+        };
 
-        setStatus("Message sent!");
-        setSender("");
-        setSubject("");
-        setMessage("");
+        emailjs
+            .send(
+                "service_hvb60hk",   // Replace with your EmailJS service ID
+                "template_mkud39b",  // Replace with your EmailJS template ID
+                templateParams,
+                "VoL9XPAeT3tF8_eV3"    // Replace with your EmailJS public key
+            )
+            .then(
+                (response) => {
+                    setStatus("Message sent!");
+                    setSender("");
+                    setSubject("");
+                    setMessage("");
+                    console.log("SUCCESS!", response.status, response.text);
+                },
+                (error) => {
+                    setStatus("Failed to send message. Try again later.");
+                    console.error("FAILED...", error);
+                }
+            );
     };
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-50 z-50 p-4">
-            <div className="bg-gray-900 rounded-xl shadow-lg w-full max-w-lg max-h-[90vh] overflow-y-auto text-white">
-                {/* Window header */}
-                <div className="flex items-center space-x-2 px-3 py-2 bg-gray-800">
-                    <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer" onClick={onClose}></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 p-4">
+            <div className="bg-gray-900 rounded-xl shadow-lg w-full max-w-md max-h-[90vh] overflow-y-auto text-white">
+                {/* Window Header */}
+                <div className="flex items-center space-x-2 px-3 py-2 bg-gray-800 rounded-t-xl">
+                    <div
+                        className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"
+                        onClick={onClose}
+                    />
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+                    <div className="w-3 h-3 bg-green-500 rounded-full" />
                     <span className="ml-2 font-semibold">Send Email</span>
                 </div>
 
-                {/* Content */}
-                <form id={"email_sender"} className="p-4 space-y-4" onSubmit={handleSend}>
+                {/* Form Content */}
+                <form className="p-4 space-y-4" onSubmit={handleSend}>
                     <div>
                         <label className="block text-gray-400 mb-1">Your Email</label>
                         <input
@@ -87,7 +115,7 @@ export default function EmailWindow({ onClose, defaultRecipient = "karam.mannai@
 
                     <button
                         type="submit"
-                        className="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 text-white"
+                        className="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 text-white w-full"
                     >
                         Send
                     </button>
