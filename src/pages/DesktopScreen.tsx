@@ -6,6 +6,7 @@ import terminalIcon from '../assets/terminal-icon.png';
 import DesktopImage from '../assets/desktop-background.gif';
 import EmailIcon from '../assets/email.png'
 import FolderIcon from '../assets/folder-icon.png';
+import AvatarIcon from '../assets/avatar-pixels.png'
 import ProjectsWindow from "../components/ProjectWindow.tsx";
 import ExperienceWindow from "../components/ExperienceWindow";
 import TestimonialsWindow from "../components/TestimonialsWindow.tsx";
@@ -71,11 +72,12 @@ export default function DesktopScreen() {
                         <span className="text-white text-xs sm:text-sm md:text-base mt-1">Terminal</span>
                     </button>
 
+                    {/* About Icon */}
                     <button
                         onClick={() => setAboutOpen(true)}
                         className="flex flex-col items-center bg-transparent border-none focus:outline-none"
                     >
-                        <img src={FolderIcon} alt="About Icon" className="w-16 h-16" />
+                        <img src={AvatarIcon} alt="About Icon" className="w-16 h-16" />
                         <span className="text-white text-center mt-1">About Me</span>
                     </button>
 
