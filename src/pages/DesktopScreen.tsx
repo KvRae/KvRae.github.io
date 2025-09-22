@@ -45,7 +45,7 @@ export default function DesktopScreen() {
         let url = '';
         if (profile === 'linkedin') url = 'https://www.linkedin.com/in/karam-mannai';
         else if (profile === 'github') url = 'https://github.com/KvRae';
-        else if (profile === 'medium') url = 'https://medium.com/@KvRae';
+        else if (profile === 'medium') url = 'https://medium.com/@karammannai';
         window.open(url, '_blank');
     }
 
