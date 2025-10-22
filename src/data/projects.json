@@ -1,37 +1,55 @@
 [
   {
-    "name": "AI Sign Language Translator",
-    "description": "Node.js, Express.js, TensorFlow, React",
-    "link": "https://kvrae.github.io/Sign-Language-Translator/"
+    "name": "AI Playground",
+    "description": "Playground chat where you can test you're LLM api keys (React, Gemini API)",
+    "link": "https://kvrae.github.io/AiPlayground/",
+    "github": "https://github.com/KvRae/AiPlayground"
+  },
+  {
+    "name": "Sign Language Translator",
+    "description": "Gesture recognition system that turns gestures into voice (Node.js, Express.js, TensorFlow, React)",
+    "link": "https://kvrae.github.io/Sign-Language-Translator/",
+    "github": "https://github.com/KvRae/Sign-Language-Translator"
   },
   {
     "name": "AiFashionWeek MVP",
-    "description": "Social Fashion Application",
+    "description": "Social Fashion Application (Figma, React, Builder.io)",
     "link": "https://aifashionweek.ai/"
   },
   {
     "name": "MINE",
-    "description": "Android Indoor Navigation Module (Kotlin, Jetpack Compose, RoomDB, Firebase)",
+    "description": "Android Indoor Navigation Module (Kotlin, Jetpack Compose, RoomDB, Firebase, CI/CD)",
     "link": "https://kvrae.github.io/MINE-Docs/"
   },
   {
     "name": "BackAppX",
-    "description": "BaaS platform (Express, MongoDB, Flutter, Docker)",
-    "link": "hhttps://backappx.github.io/BackAppX-Website/"
+    "description": "BaaS platform (MERN, Flutter, Docker)",
+    "link": "https://backappx.github.io/BackAppX-Website/"
   },
   {
     "name": "Slikoo",
-    "description": "E-commerce mobile platform (React, Symfony, Flutter)",
-    "link": "https://www.slikoo.com"
+    "description": "E-commerce mobile platform (React, Symfony, Android)",
+    "link": "https://www.slikoo.com",
+    "github": "",
+    "playstore": "https://play.google.com/store/apps/details?id=com.slikoo.slikoo&hl=en"
+  },
+  {
+    "name": "Easy Kitchen",
+    "description": "Food recipes mobile application(Flutter, Firebase (Android, IOS, NodeJs, Docker).",
+    "link": "https://kvrae.github.io/EasyKitchenWebsite/",
+    "github": "https://github.com/KvRae/Easy-Kitchen"
   },
   {
     "name": "BeadsLeads",
     "description": "Android Game (C#, Unity3D, MS Azure Playfab, Android, Web)",
-    "link": "https://kvrae.itch.io/beads-leads"
+    "link": "https://kvrae.itch.io/beads-leads",
+    "github": "https://github.com/KvRae/Beads-Leads",
+    "playstore": "https://appgallery.huawei.com/#/app/C104165042"
   },
   {
     "name": "English Made Easy",
     "description": "E-Learning Platform (HTML, CSS, JavaScript, Sass)",
-    "link": "https://kvrae.github.io/EnglishMadeEasy"
+    "link": "https://kvrae.github.io/EnglishMadeEasy",
+    "github": "https://github.com/KvRae/EnglishMadeEasy"
   }
 ]

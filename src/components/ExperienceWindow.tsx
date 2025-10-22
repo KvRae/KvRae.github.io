@@ -22,19 +22,31 @@ export default function ExperienceWindow({ onClose }: ExperienceWindowProps) {
                     {experience.map((exp, i) => (
                         <article
                             key={i}
-                            className="p-3 bg-gray-800 rounded hover:bg-gray-700 transition flex flex-col"
+                            className="p-3 bg-gray-800 rounded hover:bg-gray-700 transition flex items-start space-x-4"
                         >
-                            <h3 className="font-bold text-yellow-400 break-words">
-                                {exp.role} @ {exp.company}
-                            </h3>
 
-                            <p className="text-gray-400 text-xs mb-2 break-words">{exp.period}</p>
+                            <div className="flex-shrink-0 w-12 h-12">
+                                <img
+                                    src={exp.logoUrl}
+                                    alt={`${exp.company} logo`}
+                                    className="w-full h-full object-cover rounded-md"
+                                />
+                            </div>
 
-                            <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
-                                {exp.description.map((line, j) => (
-                                    <li key={j} className="break-words">{line}</li>
-                                ))}
-                            </ul>
+                            {/* 2. Content Container (Right Side) */}
+                            <div className="flex-1 flex flex-col">
+                                <h3 className="font-bold text-yellow-400 break-words">
+                                    {exp.role} @ {exp.company}
+                                </h3>
+
+                                <p className="text-gray-400 text-xs mb-2 break-words">{exp.period}</p>
+
+                                <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
+                                    {exp.description.map((line, j) => (
+                                        <li key={j} className="break-words">{line}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </article>
                     ))}
                 </div>

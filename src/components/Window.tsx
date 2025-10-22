@@ -10,7 +10,7 @@ interface WindowProps {
 }
 
 export default function Window({ title, url, children, onClose }: WindowProps) {
-    const [position, setPosition] = useState({ x: 100, y: 100 });
+    const [position, setPosition] = useState({ x: 0, y: 0 });
     const [dragging, setDragging] = useState(false);
     const [offset, setOffset] = useState({ x: 0, y: 0 });
 
@@ -26,6 +26,7 @@ export default function Window({ title, url, children, onClose }: WindowProps) {
     const handleMouseUp = () => setDragging(false);
 
     useEffect(() => {
+
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('mouseup', handleMouseUp);
         return () => {
@@ -36,7 +37,7 @@ export default function Window({ title, url, children, onClose }: WindowProps) {
 
     return (
         <div
-            className="absolute bg-gray-900 border border-gray-700 shadow-lg rounded w-96 h-72 overflow-hidden"
+            className="absolute bg-gray-900 border border-gray-700 shadow-lg rounded w-1/2 h-1/2 overflow-hidden"
             style={{ top: position.y, left: position.x, zIndex: 50 }}
         >
             {/* Mac-style title bar */}

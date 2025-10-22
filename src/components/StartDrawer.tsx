@@ -51,7 +51,7 @@ export default function StartDrawer({ onLogout, buttonSize = "md" }: StartDrawer
                     {/* Logout button */}
                     <button
                         onClick={onLogout}
-                        className="flex items-center justify-start space-x-2 px-3 py-2 bg-red-600 rounded hover:bg-red-700 text-white text-xs md:text-sm"
+                        className="flex items-center justify-start space-x-2 px-3 py-2 bg-red-600 rounded hover:bg-red-700 text-white text-xs md:text-sm cursor-pointer"
                     >
                         <FiPower size={16} />
                         <span>Logout</span>

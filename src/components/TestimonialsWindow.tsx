@@ -27,11 +27,12 @@ export default function TestimonialsWindow({ onClose }: TestimonialsWindowProps)
                     </div>
                     {!showForm && (
                         <button
-                            className="text-white hover:text-yellow-400"
+                            className="text-white hover:text-yellow-400 flex items-center space-x-1"
                             onClick={() => setShowForm(true)}
                             title="Add Testimonial"
                         >
-                            <FiPlus size={20} />
+                            <FiPlus size={18} />
+                            <p className="text-sm">Add yours</p>
                         </button>
                     )}
                 </div>

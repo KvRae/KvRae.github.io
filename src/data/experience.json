@@ -1,5 +1,6 @@
 [
   {
+    "logoUrl": "/img/pp-pixel.png",
     "role": "UI Developer",
     "company": "PlutopalAI",
     "period": "Nov 2024 – Jul 2025",
@@ -9,6 +10,7 @@
     ]
   },
   {
+    "logoUrl": "/img/mtk-pixel.png",
     "role": "Mobile Engineer",
     "company": "Machinestalk",
     "period": "Jan 2024 – Jul 2024",
@@ -19,6 +21,7 @@
     ]
   },
   {
+    "logoUrl": "/img/slk-pixel.png",
     "role": "Android Developer",
     "company": "Slikoo",
     "period": "Jul 2023 – Dec 2023",
@@ -29,6 +32,7 @@
     ]
   },
   {
+    "logoUrl": "/img/bax-pixel.png",
     "role": "Full Stack Developer",
     "company": "BackAppX",
     "period": "Jan 2023 – Jun 2023",
@@ -38,14 +42,18 @@
     ]
   },
   {
-    "role": "Android Developer",
-    "company": "Easy Kitchen",
-    "period": "Sep 2022 – Jan 2023",
+    "logoUrl": "/img/tt-pixel.png",
+    "role": "Fullstack Developer",
+    "company": "Tunisie Telecom",
+    "period": "Jul 2022 – Sep 2022",
     "description": [
-      "Designed and developed a recipe application."
+      "Collaborated with cross-functional teams to gather requirements and deliver high-quality updates.",
+      "Assisted in refining the app's user interface based on feedback and design guidelines.",
+      "Documented changes and updates made to the app to support ongoing development and team collaboration"
     ]
   },
   {
+    "logoUrl": "/img/bl-pixel.png",
     "role": "Android Game Developer",
     "company": "BeadsLeads",
     "period": "Feb 2021 – Jul 2022",

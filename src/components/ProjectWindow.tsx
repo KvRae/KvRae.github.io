@@ -22,26 +22,57 @@ export default function ProjectsWindow({ onClose }: ProjectsWindowProps) {
                     {projects.map((proj, i) => (
                         <article
                             key={i}
-                            className="p-3 bg-gray-800 rounded hover:bg-gray-700 transition flex flex-col"
+                            className="p-3 bg-gray-800 rounded hover:bg-gray-700 transition flex flex-col space-y-2"
                         >
-                            <h3 className="font-bold text-yellow-400 break-words">{proj.name}</h3>
+                            {/* Project Name */}
+                            <h3 className="font-bold text-yellow-400 break-words text-lg">
+                                {proj.name}
+                            </h3>
 
-                            {/* make sure description wraps */}
-                            <p className="text-gray-300 text-sm mb-2 whitespace-normal break-words">
+                            {/* Description (Guaranteed String) */}
+                            <p className="text-gray-300 text-sm whitespace-normal break-words">
                                 {proj.description}
                             </p>
 
-                            {/* links can be extremely long — force them to break instead of expanding container */}
-                            {proj.link && (
-                                <a
-                                    href={proj.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-400 hover:underline break-all max-w-full"
-                                >
-                                   visit project
-                                </a>
-                            )}
+                            {/* Project Links Section */}
+                            <div className="flex flex-wrap items-center space-x-4 pt-1">
+
+                                {/* 1. Primary Project Link (Visit Site) */}
+                                {proj.link && (
+                                    <a
+                                        href={proj.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-400 hover:text-blue-300 hover:underline break-all max-w-full text-sm font-medium"
+                                    >
+                                        Visit Site
+                                    </a>
+                                )}
+
+                                {/* 2. GitHub Link */}
+                                {proj.github && (
+                                    <a
+                                        href={proj.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-400 hover:text-blue-300 break-all max-w-full text-sm font-medium"
+                                    >
+                                        GitHub
+                                    </a>
+                                )}
+
+                                {/* 3. Play Store Link */}
+                                {proj.playstore && (
+                                    <a
+                                        href={proj.playstore}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-400 hover:text-blue-300 break-all max-w-full text-sm font-medium"
+                                    >
+                                        Play Store
+                                    </a>
+                                )}
+                            </div>
                         </article>
                     ))}
                 </div>
