@@ -65,13 +65,14 @@ export default function DesktopScreen() {
                 style={{ backgroundImage: `url(${DesktopImage})` }}
             >
                 {/* Left-side stacked icons */}
-                <div className="absolute top-10 left-10 grid grid-cols-1 gap-6">
+                <div className="absolute top-10 left-10 grid grid-rows-4 grid-flow-col gap-x-16 gap-y-8">
                     {/* Terminal Icon */}
                     <button
                         onClick={() => setTerminalOpen(true)}
                         className="flex flex-col items-center bg-transparent border-none focus:outline-none"
                     >
-                        <img src={terminalIcon} alt="CMD Icon" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
+                        <img src={terminalIcon} alt="CMD Icon"
+                             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"/>
                         <span className="text-white text-xs sm:text-sm md:text-base mt-1">Terminal</span>
                     </button>
 
@@ -80,7 +81,7 @@ export default function DesktopScreen() {
                         onClick={() => setAboutOpen(true)}
                         className="flex flex-col items-center bg-transparent border-none focus:outline-none"
                     >
-                        <img src={AvatarIcon} alt="About Icon" className="w-16 h-16" />
+                        <img src={AvatarIcon} alt="About Icon" className="w-16 h-16"/>
                         <span className="text-white text-center mt-1">About Me</span>
                     </button>
 
@@ -89,7 +90,8 @@ export default function DesktopScreen() {
                         onClick={() => setProjectsOpen(true)}
                         className="flex flex-col items-center bg-transparent border-none focus:outline-none"
                     >
-                        <img src={FolderIcon} alt="Projects Folder" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
+                        <img src={FolderIcon} alt="Projects Folder"
+                             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"/>
                         <span className="text-white text-xs sm:text-sm md:text-base mt-1">Projects</span>
                     </button>
 
@@ -98,7 +100,8 @@ export default function DesktopScreen() {
                         onClick={() => setExperienceOpen(true)}
                         className="flex flex-col items-center bg-transparent border-none focus:outline-none"
                     >
-                        <img src={FolderIcon} alt="Experience Folder" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
+                        <img src={FolderIcon} alt="Experience Folder"
+                             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"/>
                         <span className="text-white text-xs sm:text-sm md:text-base mt-1">Experience</span>
                     </button>
 
@@ -107,7 +110,8 @@ export default function DesktopScreen() {
                         onClick={() => setTestimonialsOpen(true)}
                         className="flex flex-col items-center bg-transparent border-none focus:outline-none"
                     >
-                        <img src={TestimonialsIcon} alt="Testimonials Folder" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
+                        <img src={TestimonialsIcon} alt="Testimonials Folder"
+                             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"/>
                         <span className="text-white text-xs sm:text-sm md:text-base mt-1">Testimonials</span>
                     </button>
 
@@ -116,7 +120,8 @@ export default function DesktopScreen() {
                         onClick={() => setEmailOpen(true)}
                         className="flex flex-col items-center bg-transparent border-none focus:outline-none"
                     >
-                        <img src={EmailIcon} alt="Email Icon" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
+                        <img src={EmailIcon} alt="Email Icon"
+                             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"/>
                         <span className="text-white text-xs sm:text-sm md:text-base mt-1">Mailing</span>
                     </button>
                     {/* Pacman icon */}
@@ -124,7 +129,8 @@ export default function DesktopScreen() {
                         onClick={() => setPacmanOpen(true)}
                         className="flex flex-col items-center bg-transparent border-none focus:outline-none"
                     >
-                        <img src={PacmanIcon} alt="Email Icon" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
+                        <img src={PacmanIcon} alt="Email Icon"
+                             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"/>
                         <span className="text-white text-xs sm:text-sm md:text-base mt-1">Kav-Man</span>
                     </button>
 
