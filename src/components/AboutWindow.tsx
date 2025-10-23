@@ -6,7 +6,8 @@ interface AboutWindowProps {
     aboutMe?: string;
 }
 
-export default function AboutWindow({ onClose, avatar = "/img/avatar-pixels.png",
+export default function AboutWindow({ onClose,
+                                        avatar = "/img/avatar-pixels.png",
                                         fullName = "Karam Mannai",
                                         aboutMe = "I am a passionate developer with experience in creating interactive UIs, building projects, and collaborating on professional software development. I love learning new technologies and improving my coding skills."
                                     }: AboutWindowProps) {

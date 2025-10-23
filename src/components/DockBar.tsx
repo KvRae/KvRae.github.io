@@ -21,7 +21,7 @@ export default function DockBar({ onLogout, onOpenProfile, onToggleMusic, musicP
     }, []);
 
     return (
-        <div className="bg-gray-900 h-12 w-full flex items-center justify-between px-2 md:px-4">
+        <div className="bg-gray-900 h-12 w-full flex items-center justify-between px-2 md:px-4 z-80">
             {/* Left side start drawer */}
             <StartDrawer onLogout={onLogout} buttonSize="sm" />
 

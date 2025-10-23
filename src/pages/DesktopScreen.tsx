@@ -7,6 +7,7 @@ import DesktopImage from '../assets/desktop-background.gif';
 import EmailIcon from '../assets/email.png'
 import FolderIcon from '../assets/folder-icon.png';
 import AvatarIcon from '../assets/avatar-pixels.png'
+import PacmanIcon from '../assets/pacman-icon.png'
 import ProjectsWindow from "../components/ProjectWindow.tsx";
 import ExperienceWindow from "../components/ExperienceWindow";
 import TestimonialsWindow from "../components/TestimonialsWindow.tsx";
@@ -15,6 +16,7 @@ import EmailWindow from "../components/EmailWindow";
 import TestimonialsIcon from "../assets/rating.png";
 import backgroundAudio from '../assets/audio.mp3';
 import AboutWindow from "../components/AboutWindow.tsx";
+import PacmanWindow from "../components/games/PacmanWindow.tsx";
 
 export default function DesktopScreen() {
     const [terminalOpen, setTerminalOpen] = useState(false);
@@ -24,8 +26,9 @@ export default function DesktopScreen() {
     const [projectsOpen, setProjectsOpen] = useState(false);
     const [experienceOpen, setExperienceOpen] = useState(false);
     const [emailOpen, setEmailOpen] = useState(false);
-
     const [testimonialsOpen, setTestimonialsOpen] = useState(false);
+
+    const [pacmanOpen, setPacmanOpen] = useState(false);
 
     const [musicPlaying, setMusicPlaying] = useState(true);
     const audioRef = useRef<HTMLAudioElement>(null);
@@ -62,7 +65,7 @@ export default function DesktopScreen() {
                 style={{ backgroundImage: `url(${DesktopImage})` }}
             >
                 {/* Left-side stacked icons */}
-                <div className="absolute top-10 left-10 flex flex-col space-y-6">
+                <div className="absolute top-10 left-10 grid grid-cols-1 gap-6">
                     {/* Terminal Icon */}
                     <button
                         onClick={() => setTerminalOpen(true)}
@@ -116,6 +119,15 @@ export default function DesktopScreen() {
                         <img src={EmailIcon} alt="Email Icon" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
                         <span className="text-white text-xs sm:text-sm md:text-base mt-1">Mailing</span>
                     </button>
+                    {/* Pacman icon */}
+                    <button
+                        onClick={() => setPacmanOpen(true)}
+                        className="flex flex-col items-center bg-transparent border-none focus:outline-none"
+                    >
+                        <img src={PacmanIcon} alt="Email Icon" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" />
+                        <span className="text-white text-xs sm:text-sm md:text-base mt-1">Kav-Man</span>
+                    </button>
+
 
                 </div>
 
@@ -126,6 +138,7 @@ export default function DesktopScreen() {
                 {experienceOpen && <ExperienceWindow onClose={() => setExperienceOpen(false)} />}
                 {testimonialsOpen && (<TestimonialsWindow onClose={() => setTestimonialsOpen(false)} />)}
                 {emailOpen && <EmailWindow onClose={() => setEmailOpen(false)} />}
+                {pacmanOpen && (<PacmanWindow onClose={() => setPacmanOpen(false)} />)}
 
                 {/* Profile Iframe Windows */}
                 {windows.map(win => (
