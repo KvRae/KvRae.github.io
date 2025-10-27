@@ -4,6 +4,7 @@ import { FiArrowRight } from "react-icons/fi";
 import DesktopScreen from "./DesktopScreen.tsx";
 import avatarImage from '../assets/avatar-pixels.png';
 import PasswordInput from "../components/PasswordInput.tsx";
+import TerminalButton from "../components/TerminalButton.tsx";
 
 export default function SplashScreen() {
     const [authenticated, setAuthenticated] = useState(false);
@@ -45,9 +46,10 @@ export default function SplashScreen() {
             <div className="text-gray-400 text-sm cursor-pointer relative group">
                 Do you want a hint?
                 <span className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-white text-xs rounded px-2 py-1">
-                    It's my username
+                    look for a tool below...
                 </span>
             </div>
+            <TerminalButton />
         </div>
     );
 }
