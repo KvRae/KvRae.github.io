@@ -14,7 +14,7 @@ export default function AboutWindow({ onClose,
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-50 z-50 p-4">
             <div className="bg-gray-900 rounded-xl shadow-lg w-full max-w-sm max-h-[80vh] overflow-y-auto text-white">
-                {/* Window header */}
+                {/* DraggableWindow header */}
                 <div className="flex items-center space-x-2 px-3 py-2 bg-gray-800">
                     <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer" onClick={onClose}></div>
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>

@@ -1,21 +1,21 @@
 import {useEffect, useRef, useState} from "react";
-import TerminalWindow from "../components/TerminalWindow.tsx";
+import TerminalWindow from "../components/windows/TerminalWindow.tsx";
 import DockBar from "../components/DockBar";
-import Window from "../components/Window";
+import DraggableWindow from "../components/windows/DraggableWindow.tsx";
 import terminalIcon from '../assets/terminal-icon.png';
 import DesktopImage from '../assets/desktop-background.gif';
 import EmailIcon from '../assets/email.png'
 import FolderIcon from '../assets/folder-icon.png';
 import AvatarIcon from '../assets/avatar-pixels.png'
 import PacmanIcon from '../assets/pacman-icon.png'
-import ProjectsWindow from "../components/ProjectWindow.tsx";
-import ExperienceWindow from "../components/ExperienceWindow";
-import TestimonialsWindow from "../components/TestimonialsWindow.tsx";
-import EmailWindow from "../components/EmailWindow";
+import ProjectsWindow from "../components/windows/ProjectWindow.tsx";
+import ExperienceWindow from "../components/windows/ExperienceWindow.tsx";
+import TestimonialsWindow from "../components/windows/TestimonialsWindow.tsx";
+import EmailWindow from "../components/windows/EmailWindow.tsx";
 
 import TestimonialsIcon from "../assets/rating.png";
 import backgroundAudio from '../assets/audio.mp3';
-import AboutWindow from "../components/AboutWindow.tsx";
+import AboutWindow from "../components/windows/AboutWindow.tsx";
 import PacmanWindow from "../components/games/PacmanWindow.tsx";
 
 export default function DesktopScreen() {
@@ -148,7 +148,7 @@ export default function DesktopScreen() {
 
                 {/* Profile Iframe Windows */}
                 {windows.map(win => (
-                    <Window
+                    <DraggableWindow
                         key={win.id}
                         title={win.title}
                         url={win.url}

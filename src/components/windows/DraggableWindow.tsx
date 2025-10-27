@@ -1,4 +1,4 @@
-// src/components/Window.tsx
+// src/components/DraggableWindow.tsx
 import { useState, useEffect } from 'react';
 import * as React from "react";
 
@@ -9,7 +9,7 @@ interface WindowProps {
     onClose: () => void;
 }
 
-export default function Window({ title, url, children, onClose }: WindowProps) {
+export default function DraggableWindow({ title, url, children, onClose }: WindowProps) {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [dragging, setDragging] = useState(false);
     const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -54,7 +54,7 @@ export default function Window({ title, url, children, onClose }: WindowProps) {
                 <div className="w-4"></div>
             </div>
 
-            {/* Window content */}
+            {/* DraggableWindow content */}
             {children ? children : url ? <iframe src={url} className="w-full h-full border-none" /> : null}
         </div>
     );

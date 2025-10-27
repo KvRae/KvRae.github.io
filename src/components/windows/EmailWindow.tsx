@@ -1,7 +1,7 @@
 // src/components/EmailWindow.tsx
 import { type FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
-import {EMAIL_PUBLIC_KEY, EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID} from "../utils/consts.ts";
+import {EMAIL_PUBLIC_KEY, EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID} from "../../utils/consts.ts";
 
 interface EmailWindowProps {
     onClose: () => void;
@@ -57,7 +57,7 @@ export default function EmailWindow({
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 p-4">
             <div className="bg-gray-900 rounded-xl shadow-lg w-full max-w-md max-h-[90vh] overflow-y-auto text-white">
-                {/* Window Header */}
+                {/* DraggableWindow Header */}
                 <div className="flex items-center space-x-2 px-3 py-2 bg-gray-800 rounded-t-xl">
                     <div
                         className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"

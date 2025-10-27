@@ -1,6 +1,6 @@
 import { useState } from "react";
-import commandsData from "../data/commands.json";
-import TerminalInput from "./TerminalInput.tsx";
+import commandsData from "../../data/commands.json";
+import TerminalInput from "../TerminalInput.tsx";
 
 interface TerminalWindowProps {
     onClose: () => void;
