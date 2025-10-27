@@ -8,13 +8,14 @@ interface AddTestimonialFormProps {
 }
 
 export default function AddTestimonialForm({ onCancel, onStatusChange }: AddTestimonialFormProps) {
+    const [imageLink, setImageLink] = useState("");
     const [name, setName] = useState("");
     const [message, setMessage] = useState("");
     const [sending, setSending] = useState(false);
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        if (!name || !message) {
+        if (!name || !message || !imageLink) {
             onStatusChange?.("Please fill in all fields.");
             return;
         }
@@ -22,6 +23,7 @@ export default function AddTestimonialForm({ onCancel, onStatusChange }: AddTest
         const templateParams = {
             name,
             message,
+            image: imageLink,
             date: new Date().toLocaleDateString("en-US"),
         };
 
@@ -35,6 +37,7 @@ export default function AddTestimonialForm({ onCancel, onStatusChange }: AddTest
                 EMAIL_PUBLIC_KEY
             );
             onStatusChange?.("Testimonial sent! It will be added soon!");
+            setImageLink("")
             setName("");
             setMessage("");
             onCancel(); // hide form after successful send
@@ -48,6 +51,17 @@ export default function AddTestimonialForm({ onCancel, onStatusChange }: AddTest
 
     return (
         <form className="p-4 space-y-4 bg-gray-800 rounded" onSubmit={handleSubmit}>
+            <div>
+                <label className="block text-gray-400 mb-1">Image url (we use cdn images)</label>
+                <input
+                    type="text"
+                    value={imageLink}
+                    onChange={(e) => setImageLink(e.target.value)}
+                    placeholder="Your avatar image URL"
+                    className="w-full p-2 rounded border border-gray-700 bg-gray-900 text-white outline-none"
+                    disabled={sending}
+                />
+            </div>
             <div>
                 <label className="block text-gray-400 mb-1">Name</label>
                 <input
