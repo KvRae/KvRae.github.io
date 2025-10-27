@@ -63,7 +63,10 @@ export default function TerminalWindow({ onClose }: TerminalWindowProps) {
             </div>
 
             {/* Terminal content */}
-            <div className="p-4 text-green-400 font-mono flex-1 overflow-y-auto whitespace-pre-wrap text-xs sm:text-sm md:text-base lg:text-lg">
+            <div
+                className="p-4 text-green-400 font-mono flex-1 overflow-y-auto overflow-x-auto whitespace-pre text-xs sm:text-[10px] md:text-sm lg:text-base"
+                style={{ background: "transparent" }}
+            >
                 {history.map((line, i) => (
                     <div key={i}>{line}</div>
                 ))}
