@@ -13,6 +13,13 @@ interface Command {
 
 export default function TerminalWindow({ onClose }: TerminalWindowProps) {
     const [history, setHistory] = useState<string[]>([
+        "██╗  ██╗██╗   ██╗██████╗        ██████╗ ███████╗\n" +
+        "██║ ██╔╝██║   ██║██╔══██╗      ██╔═══██╗██╔════╝\n" +
+        "█████╔╝ ██║   ██║██████╔╝█████╗██║   ██║███████╗\n" +
+        "██╔═██╗ ╚██╗ ██╔╝██╔══██╗╚════╝██║   ██║╚════██║\n" +
+        "██║  ██╗ ╚████╔╝ ██║  ██║      ╚██████╔╝███████║\n" +
+        "╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝       ╚═════╝ ╚══════╝\n" +
+        "                                                ",
         "Welcome to my custom console. Type 'help' to display all the commands."
     ]);
     const commands: Record<string, Command> = commandsData;
