@@ -173,12 +173,20 @@ export default function CrackTerminalModal({ onClose }: Props) {
 
                 <div
                     ref={scrollRef}
-                    className="p-4 text-green-400 font-mono flex-1 overflow-y-auto overflow-x-auto whitespace-pre text-xs sm:text-[10px] md:text-sm lg:text-base"
+                    className="p-4 font-mono flex-1 overflow-y-auto whitespace-pre-wrap text-xs sm:text-sm md:text-base"
                     style={{ background: "transparent" }}
                 >
-                    {history.map((line, i) => (
-                        <div key={i}>{line}</div>
-                    ))}
+                    {history.map((line, i) => {
+                        // Hide ASCII art lines on small screens
+                        if (i === 0) {
+                            return (
+                                <div key={i} className="hidden sm:block">
+                                    {line}
+                                </div>
+                            );
+                        }
+                        return <div key={i}>{line}</div>;
+                    })}
 
                     <div className="mt-2">
                         <TerminalInput onEnter={handleCommand} />
