@@ -25,14 +25,6 @@ export default function BootScreen({ onFinish }: BootScreenProps) {
     return (
         <div className="h-screen w-screen bg-gray-900 flex flex-col items-center justify-center text-green-400 font-mono">
             <div className={"flex flex-col items-center mb-8"}>
-            <pre className="whitespace-pre text-center text-green-400 font-mono mb-8 text-sm md:text-base">
-                {`██╗░░██╗██╗░░░██╗██████╗░░░░░░░░█████╗░░██████╗
-██║░██╔╝██║░░░██║██╔══██╗░░░░░░██╔══██╗██╔════╝
-█████═╝░╚██╗░██╔╝██████╔╝█████╗██║░░██║╚█████╗░
-██╔═██╗░░╚████╔╝░██╔══██╗╚════╝██║░░██║░╚═══██╗
-██║░╚██╗░░╚██╔╝░░██║░░██║░░░░░░╚█████╔╝██████╔╝
-╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝░░░░░░░╚════╝░╚═════╝░`}
-            </pre>
             </div>
             <div className="text-lg mb-4">Booting KvR-OS...</div>
             <div className="w-3/4 bg-gray-700 h-2 rounded overflow-hidden">
