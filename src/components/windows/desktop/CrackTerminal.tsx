@@ -97,7 +97,7 @@ export default function CrackTerminalModal({ onClose }: Props) {
             const h = makeFakeHash();
             setFoundHash(h);
             setState("ready");
-            push("", "Scan complete. Found candidate hash:","",`${h}`,"", "Use `decrypt <hash>` to attempt decryption.");
+            push("", "Scan complete. Found candidate hash:","                   ",`${h}`,"                       ", "Use `decrypt <hash>` to attempt decryption.");
             return;
         }
 
