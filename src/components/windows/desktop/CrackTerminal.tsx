@@ -1,6 +1,6 @@
 // src/components/CrackTerminalModal.tsx
 import { useEffect, useRef, useState } from "react";
-import TerminalInput from "../TerminalInput.tsx";
+import TerminalInput from "../../TerminalInput.tsx";
 
 type Props = {
     onClose: () => void;
@@ -131,7 +131,7 @@ export default function CrackTerminalModal({ onClose }: Props) {
             try {
                 const password = await simulatedDecrypt();
                 push("", "Decryption successful:", `  Decrypted password: ${password}`, "");
-                push("", "Close the terminal and try the password", ``, "");
+                push("", "Exit the terminal and try the password", ``, "");
             } catch {
                 push("Decryption failed: unknown error");
             } finally {

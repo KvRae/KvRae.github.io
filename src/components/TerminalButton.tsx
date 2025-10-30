@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CrackTerminal from "./windows/CrackTerminal";
+import CrackTerminal from "./windows/desktop/CrackTerminal.tsx";
 
 export default function TerminalButton() {
     const [open, setOpen] = useState(false);

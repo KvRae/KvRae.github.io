@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AddTestimonialForm from "./AddTestimonialFrom.tsx";
-import testimonialsData from "../../data/testimonials.json";
+import testimonialsData from "../../../data/testimonials.json";
 import { FiPlus } from "react-icons/fi";
 
 interface TestimonialsWindowProps {

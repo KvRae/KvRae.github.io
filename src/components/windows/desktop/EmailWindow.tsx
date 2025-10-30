@@ -1,7 +1,7 @@
 // src/components/EmailWindow.tsx
 import { type FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
-import {EMAIL_PUBLIC_KEY, EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID} from "../../utils/consts.ts";
+import {EMAIL_PUBLIC_KEY, EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID} from "../../../utils/consts.ts";
 
 interface EmailWindowProps {
     onClose: () => void;

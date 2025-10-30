@@ -1,22 +1,22 @@
 import {useEffect, useRef, useState} from "react";
-import TerminalWindow from "../components/windows/TerminalWindow.tsx";
+import TerminalWindow from "../components/windows/desktop/TerminalWindow.tsx";
 import DockBar from "../components/DockBar";
-import DraggableWindow from "../components/windows/DraggableWindow.tsx";
+import DraggableWindow from "../components/windows/desktop/DraggableWindow.tsx";
 import terminalIcon from '../assets/terminal-icon.png';
 import DesktopImage from '../assets/desktop-background.gif';
 import EmailIcon from '../assets/email.png'
 import FolderIcon from '../assets/folder-icon.png';
 import AvatarIcon from '../assets/avatar-pixels.png'
 import PacmanIcon from '../assets/pacman-icon.png'
-import ProjectsWindow from "../components/windows/ProjectWindow.tsx";
-import ExperienceWindow from "../components/windows/ExperienceWindow.tsx";
-import TestimonialsWindow from "../components/windows/TestimonialsWindow.tsx";
-import EmailWindow from "../components/windows/EmailWindow.tsx";
+import ProjectsWindow from "../components/windows/desktop/ProjectWindow.tsx";
+import ExperienceWindow from "../components/windows/desktop/ExperienceWindow.tsx";
+import TestimonialsWindow from "../components/windows/desktop/TestimonialsWindow.tsx";
+import EmailWindow from "../components/windows/desktop/EmailWindow.tsx";
 
 import TestimonialsIcon from "../assets/rating.png";
 import backgroundAudio from '../assets/audio.mp3';
-import AboutWindow from "../components/windows/AboutWindow.tsx";
-import PacmanWindow from "../components/games/PacmanWindow.tsx";
+import AboutWindow from "../components/windows/desktop/AboutWindow.tsx";
+import PacmanWindow from "../components/windows/games/PacmanWindow.tsx";
 
 export default function DesktopScreen() {
     const [terminalOpen, setTerminalOpen] = useState(false);

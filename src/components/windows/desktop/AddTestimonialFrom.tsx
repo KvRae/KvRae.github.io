@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
-import {EMAIL_PUBLIC_KEY, EMAIL_SERVICE_ID, TESTM_TEMPLATE_ID} from "../../utils/consts.ts";
+import {EMAIL_PUBLIC_KEY, EMAIL_SERVICE_ID, TESTM_TEMPLATE_ID} from "../../../utils/consts.ts";
 
 interface AddTestimonialFormProps {
     onCancel: () => void;

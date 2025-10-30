@@ -1,4 +1,4 @@
-import experience from "../../data/experience.json";
+import experience from "../../../data/experience.json";
 
 interface ExperienceWindowProps {
     onClose: () => void;

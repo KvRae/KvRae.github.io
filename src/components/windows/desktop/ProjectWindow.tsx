@@ -1,4 +1,4 @@
-import projects from "../../data/projects.json";
+import projects from "../../../data/projects.json";
 
 interface ProjectsWindowProps {
     onClose: () => void;
