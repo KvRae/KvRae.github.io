@@ -130,6 +130,7 @@ export default function CrackTerminalModal({ onClose }: Props) {
 
             try {
                 const password = await simulatedDecrypt();
+                push('','','')
                 push("", "Decryption successful:", `  Decrypted password: ${password}`, "");
                 push("", "Exit the terminal and try the password", ``, "");
             } catch {
