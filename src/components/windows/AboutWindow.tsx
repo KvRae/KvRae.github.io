@@ -1,3 +1,4 @@
+import aboutData from '../../data/about.json';
 
 interface AboutWindowProps {
     onClose: () => void;
@@ -7,10 +8,11 @@ interface AboutWindowProps {
 }
 
 export default function AboutWindow({ onClose,
-                                        avatar = "/img/avatar-pixels.png",
-                                        fullName = "Karam Mannai",
-                                        aboutMe = "I am a passionate developer with experience in creating interactive UIs, building projects, and collaborating on professional software development. I love learning new technologies and improving my coding skills."
+                                    avatar = aboutData.avatar,
+                                    fullName = aboutData.fullName,
+                                    aboutMe = aboutData.aboutMe
                                     }: AboutWindowProps) {
+
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-50 z-50 p-4">
             <div className="bg-gray-900 rounded-xl shadow-lg w-full max-w-sm max-h-[80vh] overflow-y-auto text-white">

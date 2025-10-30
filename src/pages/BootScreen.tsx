@@ -15,9 +15,9 @@ export default function BootScreen({ onFinish }: BootScreenProps) {
                     onFinish();
                     return 100;
                 }
-                return prev + 2; // Adjust speed here
+                return prev + 2;
             });
-        }, 80); // 80ms * 50 steps ≈ 4 seconds
+        }, 80);
 
         return () => clearInterval(interval);
     }, [onFinish]);

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import {FiLock} from "react-icons/fi";
 import CrackTerminal from "./windows/CrackTerminal";
 
 export default function TerminalButton() {
@@ -11,7 +10,8 @@ export default function TerminalButton() {
                 onClick={() => setOpen(true)}
                 className="absolute bottom-4 left-4 bg-gray-800 hover:bg-gray-700 p-3 rounded-full text-white"
             >
-                <FiLock size={24} />
+                <img src="/img/password.png" alt="Terminal Icon" className="w-8 h-8"/>
+
             </button>
 
             {open && (
