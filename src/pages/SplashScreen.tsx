@@ -154,19 +154,8 @@ export default function SplashScreen() {
             because the TerminalButton is moving outside this container
         */}
             </div>
-
-            {/* ✅ FIX APPLIED HERE:
-        1. Changed 'absolute' to 'fixed'.
-        2. Added 'z-20' to ensure it's on top of the background and content.
-        3. Removed 'pb-[env(safe-area-inset-bottom)]' from the main content wrapper
-           and adjusted the 'bottom' style here instead, making this element responsible
-           for its own safe area spacing.
-
-        This button will now stick to the viewport, respecting the safe area.
-    */}
             <div
-                className="w-full max-w-xs sm:max-w-sm mx-auto **fixed** left-0 right-0 **z-20** px-4"
-                style={{ bottom: `calc(0.5rem + env(safe-area-inset-bottom))` }}
+                className="w-full max-w-xs sm:max-w-sm mx-auto **fixed** left-0 right-0 **z-20** px-4 **bottom-4 sm:bottom-6**"
             >
                 <TerminalButton />
             </div>
