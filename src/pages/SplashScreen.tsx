@@ -4,12 +4,14 @@ import DesktopScreen from "./DesktopScreen.tsx";
 import avatarImage from "../assets/avatar-pixels.png";
 import PasswordInput from "../components/PasswordInput.tsx";
 import TerminalButton from "../components/TerminalButton.tsx";
+import CrackTerminal from "../components/windows/desktop/CrackTerminal.tsx";
 import * as React from "react";
 
 export default function SplashScreen() {
     const [authenticated, setAuthenticated] = useState(false);
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const [terminalOpen, setTerminalOpen] = useState(false);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
     const correctPassword = "Kvrae";
@@ -23,27 +25,22 @@ export default function SplashScreen() {
         }
     };
 
-    // Handle Enter key press
     const handleKeyPress = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter') {
             handleLogin();
         }
     };
 
-    // Prevent unwanted scroll behaviors
     useEffect(() => {
         if (!authenticated) {
             document.body.style.overflow = 'hidden';
             document.body.style.overscrollBehavior = 'none';
             document.documentElement.style.overscrollBehavior = 'none';
 
-            // Prevent zoom on double tap on mobile
             let lastTouchEnd = 0;
             const preventZoom = (e: TouchEvent) => {
                 const now = Date.now();
-                if (now - lastTouchEnd <= 300) {
-                    e.preventDefault();
-                }
+                if (now - lastTouchEnd <= 300) e.preventDefault();
                 lastTouchEnd = now;
             };
 
@@ -58,7 +55,6 @@ export default function SplashScreen() {
         }
     }, [authenticated]);
 
-    // Kvrae letters background animation
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -69,18 +65,15 @@ export default function SplashScreen() {
         let height = (canvas.height = window.innerHeight);
 
         const letters = "KVRAEkvrae";
-        // Responsive font size
         const fontSize = window.innerWidth < 640 ? 12 : 16;
         const columns = Math.floor(width / fontSize);
         const drops = new Array(columns).fill(1);
 
         const draw = () => {
-            // dark soft background overlay
             ctx.fillStyle = "rgba(10, 10, 5, 0.08)";
             ctx.fillRect(0, 0, width, height);
 
-            // golden-yellow glow for falling letters
-            ctx.fillStyle = "rgba(255, 215, 0, 0.35)"; // gold-yellow
+            ctx.fillStyle = "rgba(255, 215, 0, 0.35)";
             ctx.font = `${fontSize}px monospace`;
 
             for (let i = 0; i < drops.length; i++) {
@@ -95,7 +88,6 @@ export default function SplashScreen() {
         };
 
         const intervalId = setInterval(draw, 50);
-
         const handleResize = () => {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
@@ -112,13 +104,11 @@ export default function SplashScreen() {
 
     return (
         <div className="relative h-screen w-screen inset-0 overflow-hidden bg-[#0b0b0d]">
-            {/* Animated Kvrae background */}
             <canvas
                 ref={canvasRef}
                 className="absolute top-0 left-0 w-full h-full opacity-60 blur-[1px]"
             />
 
-            {/* Login content */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6">
                 <img
                     src={avatarImage}
@@ -131,7 +121,8 @@ export default function SplashScreen() {
 
                 <div
                     className="flex items-center space-x-2 mb-2 w-full max-w-[16rem]"
-                     onKeyDown={handleKeyPress}>
+                    onKeyDown={handleKeyPress}
+                >
                     <PasswordInput
                         password={password}
                         setPassword={(val) => {
@@ -160,10 +151,19 @@ export default function SplashScreen() {
                         look for a tool below...
                     </span>
                 </div>
+
+                {/* Terminal Button */}
                 <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-30">
-                    <TerminalButton />
+                    <TerminalButton onClick={() => setTerminalOpen(true)} />
                 </div>
             </div>
+
+            {/* Terminal Modal */}
+            {terminalOpen && (
+                <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
+                    <CrackTerminal onClose={() => setTerminalOpen(false)} />
+                </div>
+            )}
         </div>
     );
 }
