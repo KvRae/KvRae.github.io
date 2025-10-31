@@ -161,9 +161,9 @@ export default function SplashScreen() {
                     </span>
                 </div>
 
-                <div className="w-full max-w-xs sm:max-w-sm">
-                    <TerminalButton />
-                </div>
+            </div>
+            <div className="w-full max-w-xs sm:max-w-sm  mx-auto absolute bottom-2 left-0 right-0">
+                <TerminalButton />
             </div>
         </div>
     );
