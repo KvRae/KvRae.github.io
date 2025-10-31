@@ -105,8 +105,8 @@ export default function SplashScreen() {
                 className="absolute top-0 left-0 w-full h-full opacity-60 blur-[1px]"
             />
 
-            {/* Login content */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 pb-[env(safe-area-inset-bottom)]">
+            {/* Login content - This container holds all the main login elements */}
+            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6">
                 <img
                     src={avatarImage}
                     alt="Avatar"
@@ -142,21 +142,33 @@ export default function SplashScreen() {
                     </div>
                 )}
 
-                <div className="text-gray-400 text-xs sm:text-sm cursor-pointer relative group mb-4 sm:mb-6 touch-manipulation">
+                <div className="text-gray-400 text-xs sm:text-sm cursor-pointer relative group touch-manipulation">
                     Do you want a hint?
                     <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity bg-gray-800 text-yellow-100 text-xs rounded px-2 py-1 whitespace-nowrap pointer-events-none">
-                        look for a tool below...
-                    </span>
-                </div>
-                <div
-                    className="w-full max-w-xs sm:max-w-sm mx-auto absolute left-0 right-0"
-                    style={{ bottom: `calc(0.5rem + env(safe-area-inset-bottom))` }}
-                >
-                    <TerminalButton />
+                look for a tool below...
+            </span>
                 </div>
 
-                {/* TerminalButton respecting safe area */}
+                {/*
+            NOTE: I removed the original empty div with mb-4/6 here
+            because the TerminalButton is moving outside this container
+        */}
+            </div>
 
+            {/* ✅ FIX APPLIED HERE:
+        1. Changed 'absolute' to 'fixed'.
+        2. Added 'z-20' to ensure it's on top of the background and content.
+        3. Removed 'pb-[env(safe-area-inset-bottom)]' from the main content wrapper
+           and adjusted the 'bottom' style here instead, making this element responsible
+           for its own safe area spacing.
+
+        This button will now stick to the viewport, respecting the safe area.
+    */}
+            <div
+                className="w-full max-w-xs sm:max-w-sm mx-auto **fixed** left-0 right-0 **z-20** px-4"
+                style={{ bottom: `calc(0.5rem + env(safe-area-inset-bottom))` }}
+            >
+                <TerminalButton />
             </div>
         </div>
     );
