@@ -40,6 +40,31 @@ export default function DesktopScreen() {
         }
     }, [musicPlaying]);
 
+    // Prevent unwanted scroll behaviors
+    useEffect(() => {
+        // Prevent pull-to-refresh and overscroll on mobile
+        document.body.style.overscrollBehavior = 'none';
+        document.documentElement.style.overscrollBehavior = 'none';
+
+        // Prevent zoom on double tap on mobile
+        let lastTouchEnd = 0;
+        const preventZoom = (e: TouchEvent) => {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+            }
+            lastTouchEnd = now;
+        };
+
+        document.addEventListener('touchend', preventZoom, { passive: false });
+
+        return () => {
+            document.body.style.overscrollBehavior = 'auto';
+            document.documentElement.style.overscrollBehavior = 'auto';
+            document.removeEventListener('touchend', preventZoom);
+        };
+    }, []);
+
     const handleLogout = () => window.location.reload();
 
     const handleOpenProfile = (profile: string) => {
@@ -55,28 +80,29 @@ export default function DesktopScreen() {
     };
 
     return (
-        <div className="bg-[#0b0b0d] h-screen w-screen relative flex flex-col justify-between text-yellow-100">
+        <div className="bg-[#0b0b0d] h-screen w-screen fixed inset-0 overflow-hidden flex flex-col text-yellow-100">
             <audio ref={audioRef} src={backgroundAudio} loop />
 
             {/* Desktop Area */}
             <div
-                className="flex-1 relative bg-cover bg-center"
+                className="flex-1 relative bg-cover bg-center overflow-y-auto overflow-x-hidden"
                 style={{
                     backgroundImage: `url(${DesktopImage})`,
                     filter: "brightness(0.85) contrast(1.1)",
+                    WebkitOverflowScrolling: 'touch'
                 }}
             >
-                {/* Left-side stacked icons */}
-                <div className="absolute top-10 left-10 grid grid-rows-4 grid-flow-col gap-x-16 gap-y-8">
+                {/* Icons Grid - Responsive layout */}
+                <div className="absolute top-4 sm:top-10 left-4 sm:left-10 grid grid-cols-2 sm:grid-rows-4 sm:grid-flow-col gap-4 sm:gap-x-16 sm:gap-y-8 pb-24 sm:pb-0">
                     {/* Terminal */}
                     <button
                         onClick={() => setTerminalOpen(true)}
-                        className="flex flex-col items-center bg-transparent hover:scale-105 transition-transform focus:outline-none"
+                        className="flex flex-col items-center bg-transparent hover:scale-105 active:scale-95 transition-transform focus:outline-none touch-manipulation"
                     >
                         <img
                             src={terminalIcon}
                             alt="Terminal Icon"
-                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_8px_rgba(255,215,0,0.4)]"
+                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_8px_rgba(255,215,0,0.4)] pointer-events-none"
                         />
                         <span className="text-yellow-200 text-xs sm:text-sm md:text-base mt-1">
                             Terminal
@@ -86,12 +112,12 @@ export default function DesktopScreen() {
                     {/* About */}
                     <button
                         onClick={() => setAboutOpen(true)}
-                        className="flex flex-col items-center bg-transparent hover:scale-105 transition-transform focus:outline-none"
+                        className="flex flex-col items-center bg-transparent hover:scale-105 active:scale-95 transition-transform focus:outline-none touch-manipulation"
                     >
                         <img
                             src={AvatarIcon}
                             alt="About Icon"
-                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_8px_rgba(255,215,0,0.4)]"
+                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_8px_rgba(255,215,0,0.4)] pointer-events-none"
                         />
                         <span className="text-yellow-200 text-xs sm:text-sm md:text-base mt-1">About Me</span>
                     </button>
@@ -99,12 +125,12 @@ export default function DesktopScreen() {
                     {/* Projects */}
                     <button
                         onClick={() => setProjectsOpen(true)}
-                        className="flex flex-col items-center bg-transparent hover:scale-105 transition-transform focus:outline-none"
+                        className="flex flex-col items-center bg-transparent hover:scale-105 active:scale-95 transition-transform focus:outline-none touch-manipulation"
                     >
                         <img
                             src={FolderIcon}
                             alt="Projects Folder"
-                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_6px_rgba(255,215,0,0.4)]"
+                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_6px_rgba(255,215,0,0.4)] pointer-events-none"
                         />
                         <span className="text-yellow-200 text-xs sm:text-sm md:text-base mt-1">
                             Projects
@@ -114,12 +140,12 @@ export default function DesktopScreen() {
                     {/* Experience */}
                     <button
                         onClick={() => setExperienceOpen(true)}
-                        className="flex flex-col items-center bg-transparent hover:scale-105 transition-transform focus:outline-none"
+                        className="flex flex-col items-center bg-transparent hover:scale-105 active:scale-95 transition-transform focus:outline-none touch-manipulation"
                     >
                         <img
                             src={FolderIcon}
                             alt="Experience Folder"
-                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_6px_rgba(255,215,0,0.4)]"
+                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_6px_rgba(255,215,0,0.4)] pointer-events-none"
                         />
                         <span className="text-yellow-200 text-xs sm:text-sm md:text-base mt-1">
                             Experience
@@ -129,12 +155,12 @@ export default function DesktopScreen() {
                     {/* Testimonials */}
                     <button
                         onClick={() => setTestimonialsOpen(true)}
-                        className="flex flex-col items-center bg-transparent hover:scale-105 transition-transform focus:outline-none"
+                        className="flex flex-col items-center bg-transparent hover:scale-105 active:scale-95 transition-transform focus:outline-none touch-manipulation"
                     >
                         <img
                             src={TestimonialsIcon}
                             alt="Testimonials Folder"
-                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_6px_rgba(255,215,0,0.4)]"
+                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_6px_rgba(255,215,0,0.4)] pointer-events-none"
                         />
                         <span className="text-yellow-200 text-xs sm:text-sm md:text-base mt-1">
                             Testimonials
@@ -144,12 +170,12 @@ export default function DesktopScreen() {
                     {/* Email */}
                     <button
                         onClick={() => setEmailOpen(true)}
-                        className="flex flex-col items-center bg-transparent hover:scale-105 transition-transform focus:outline-none"
+                        className="flex flex-col items-center bg-transparent hover:scale-105 active:scale-95 transition-transform focus:outline-none touch-manipulation"
                     >
                         <img
                             src={EmailIcon}
                             alt="Email Icon"
-                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_6px_rgba(255,215,0,0.4)]"
+                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_6px_rgba(255,215,0,0.4)] pointer-events-none"
                         />
                         <span className="text-yellow-200 text-xs sm:text-sm md:text-base mt-1">
                             Mailing
@@ -159,12 +185,12 @@ export default function DesktopScreen() {
                     {/* Pacman */}
                     <button
                         onClick={() => setPacmanOpen(true)}
-                        className="flex flex-col items-center bg-transparent hover:scale-105 transition-transform focus:outline-none"
+                        className="flex flex-col items-center bg-transparent hover:scale-105 active:scale-95 transition-transform focus:outline-none touch-manipulation"
                     >
                         <img
                             src={PacmanIcon}
                             alt="Kav-Man Icon"
-                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_6px_rgba(255,215,0,0.4)]"
+                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_6px_rgba(255,215,0,0.4)] pointer-events-none"
                         />
                         <span className="text-yellow-200 text-xs sm:text-sm md:text-base mt-1">
                             Kav-Man
@@ -192,13 +218,15 @@ export default function DesktopScreen() {
                 ))}
             </div>
 
-            {/* Dock Bar */}
-            <DockBar
-                onToggleMusic={() => setMusicPlaying((prev) => !prev)}
-                musicPlaying={musicPlaying}
-                onLogout={handleLogout}
-                onOpenProfile={handleOpenProfile}
-            />
+            {/* Dock Bar - Fixed at bottom */}
+            <div className="shrink-0">
+                <DockBar
+                    onToggleMusic={() => setMusicPlaying((prev) => !prev)}
+                    musicPlaying={musicPlaying}
+                    onLogout={handleLogout}
+                    onOpenProfile={handleOpenProfile}
+                />
+            </div>
         </div>
     );
 }

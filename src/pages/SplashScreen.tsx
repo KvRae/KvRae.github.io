@@ -4,6 +4,7 @@ import DesktopScreen from "./DesktopScreen.tsx";
 import avatarImage from "../assets/avatar-pixels.png";
 import PasswordInput from "../components/PasswordInput.tsx";
 import TerminalButton from "../components/TerminalButton.tsx";
+import * as React from "react";
 
 export default function SplashScreen() {
     const [authenticated, setAuthenticated] = useState(false);
@@ -22,6 +23,41 @@ export default function SplashScreen() {
         }
     };
 
+    // Handle Enter key press
+    const handleKeyPress = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter') {
+            handleLogin();
+        }
+    };
+
+    // Prevent unwanted scroll behaviors
+    useEffect(() => {
+        if (!authenticated) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.overscrollBehavior = 'none';
+            document.documentElement.style.overscrollBehavior = 'none';
+
+            // Prevent zoom on double tap on mobile
+            let lastTouchEnd = 0;
+            const preventZoom = (e: TouchEvent) => {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
+                    e.preventDefault();
+                }
+                lastTouchEnd = now;
+            };
+
+            document.addEventListener('touchend', preventZoom, { passive: false });
+
+            return () => {
+                document.body.style.overflow = 'auto';
+                document.body.style.overscrollBehavior = 'auto';
+                document.documentElement.style.overscrollBehavior = 'auto';
+                document.removeEventListener('touchend', preventZoom);
+            };
+        }
+    }, [authenticated]);
+
     // Kvrae letters background animation
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -33,7 +69,8 @@ export default function SplashScreen() {
         let height = (canvas.height = window.innerHeight);
 
         const letters = "KVRAEkvrae";
-        const fontSize = 16;
+        // Responsive font size
+        const fontSize = window.innerWidth < 640 ? 12 : 16;
         const columns = Math.floor(width / fontSize);
         const drops = new Array(columns).fill(1);
 
@@ -74,7 +111,7 @@ export default function SplashScreen() {
     if (authenticated) return <DesktopScreen />;
 
     return (
-        <div className="relative h-screen w-screen overflow-hidden bg-[#0b0b0d]">
+        <div className="relative h-screen w-screen inset-0 overflow-hidden bg-[#0b0b0d]">
             {/* Animated Kvrae background */}
             <canvas
                 ref={canvasRef}
@@ -82,17 +119,19 @@ export default function SplashScreen() {
             />
 
             {/* Login content */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-full">
+            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6">
                 <img
                     src={avatarImage}
                     alt="Avatar"
-                    className="w-32 h-32 rounded-full mb-2 border border-yellow-400/40 shadow-[0_0_15px_rgba(255,215,0,0.2)]"
+                    className="w-24 h-24 sm:w-32 sm:h-32 rounded-full mb-2 border border-yellow-400/40 shadow-[0_0_15px_rgba(255,215,0,0.2)] pointer-events-none select-none"
                 />
-                <div className="text-yellow-200 text-lg mb-6 tracking-wide drop-shadow-[0_0_6px_rgba(255,255,100,0.5)]">
+                <div className="text-yellow-200 text-base sm:text-lg mb-4 sm:mb-6 tracking-wide drop-shadow-[0_0_6px_rgba(255,255,100,0.5)]">
                     Kvrae
                 </div>
 
-                <div className="flex items-center space-x-2 mb-2">
+                <div
+                    className="flex items-center space-x-2 mb-2 w-full max-w-[16rem]"
+                     onKeyDown={handleKeyPress}>
                     <PasswordInput
                         password={password}
                         setPassword={(val) => {
@@ -102,22 +141,29 @@ export default function SplashScreen() {
                     />
                     <button
                         onClick={handleLogin}
-                        className="px-2 py-2 bg-yellow-500 rounded hover:bg-yellow-400 text-black font-semibold flex items-center justify-center transition shadow-[0_0_8px_rgba(255,215,0,0.5)]"
+                        className="px-2 py-2 bg-yellow-500 rounded hover:bg-yellow-400 active:bg-yellow-600 text-black font-semibold flex items-center justify-center transition shadow-[0_0_8px_rgba(255,215,0,0.5)] touch-manipulation shrink-0"
+                        aria-label="Login"
                     >
                         <FiArrowRight size={20} />
                     </button>
                 </div>
 
-                {error && <div className="text-red-400 text-sm mb-2">{error}</div>}
+                {error && (
+                    <div className="text-red-400 text-xs sm:text-sm mb-2 animate-pulse">
+                        {error}
+                    </div>
+                )}
 
-                <div className="text-gray-400 text-sm cursor-pointer relative group">
+                <div className="text-gray-400 text-xs sm:text-sm cursor-pointer relative group mb-4 sm:mb-6 touch-manipulation">
                     Do you want a hint?
-                    <span className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-yellow-100 text-xs rounded px-2 py-1">
+                    <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity bg-gray-800 text-yellow-100 text-xs rounded px-2 py-1 whitespace-nowrap pointer-events-none">
                         look for a tool below...
                     </span>
                 </div>
 
-                <TerminalButton />
+                <div className="w-full max-w-xs sm:max-w-sm">
+                    <TerminalButton />
+                </div>
             </div>
         </div>
     );

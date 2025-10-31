@@ -11,7 +11,7 @@ export default function PasswordInput({ password, setPassword }: PasswordInputPr
     const [show, setShow] = useState(false);
 
     return (
-        <div className="relative w-full">
+        <div className="relative w-full max-w-md">
             <input
                 type={show ? "text" : "password"}
                 placeholder="Enter password"
