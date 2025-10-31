@@ -219,12 +219,13 @@ export default function DesktopScreen() {
             </div>
 
             {/* Dock Bar - Fixed at bottom */}
-            <div className="shrink-0">
+            {/* DockBar - fixed bottom */}
+            <div  className="fixed bottom-0 left-0 w-full z-20" >
                 <DockBar
-                    onToggleMusic={() => setMusicPlaying((prev) => !prev)}
-                    musicPlaying={musicPlaying}
-                    onLogout={handleLogout}
-                    onOpenProfile={handleOpenProfile}
+                onToggleMusic={() => setMusicPlaying((prev) => !prev)}
+                musicPlaying={musicPlaying}
+                onLogout={handleLogout}
+                onOpenProfile={handleOpenProfile}
                 />
             </div>
         </div>

@@ -148,14 +148,15 @@ export default function SplashScreen() {
                         look for a tool below...
                     </span>
                 </div>
-
-                {/* TerminalButton respecting safe area */}
                 <div
                     className="w-full max-w-xs sm:max-w-sm mx-auto absolute left-0 right-0"
                     style={{ bottom: `calc(0.5rem + env(safe-area-inset-bottom))` }}
                 >
                     <TerminalButton />
                 </div>
+
+                {/* TerminalButton respecting safe area */}
+
             </div>
         </div>
     );
