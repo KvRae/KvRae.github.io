@@ -60,27 +60,40 @@ export default function TerminalWindow({ onClose }: TerminalWindowProps) {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
-            <div className="bg-[#0d0d0f]/95 border border-yellow-700/40 rounded-xl shadow-[0_0_15px_rgba(255,215,0,0.15)] w-full max-w-4xl max-h-[70vh] flex flex-col text-yellow-100 font-mono">
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+            {/* Dimmer overlay */}
+            <div
+                className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                onClick={onClose}
+                aria-hidden
+            />
 
+            {/* Modal window */}
+            <div
+                className="relative bg-[#0b0b0d] text-yellow-400 rounded-xl shadow-[0_0_25px_rgba(255,215,0,0.3)] w-full max-w-4xl max-h-[70vh] flex flex-col border border-yellow-800/40 font-mono"
+                role="dialog"
+                aria-modal="true"
+                onClick={(e) => e.stopPropagation()}
+            >
                 {/* Header */}
-                <div className="flex items-center space-x-2 px-3 py-2 bg-yellow-800/30 border-b border-yellow-700/30 rounded-t-xl">
+                <div className="flex items-center gap-2 px-3 py-2 bg-[#1a1a10] border-b border-yellow-800/40 rounded-t-xl">
                     <div
-                        className="w-3 h-3 bg-red-600 rounded-full cursor-pointer hover:bg-red-700 transition"
+                        className="w-3 h-3 bg-red-500 rounded-full cursor-pointer hover:bg-red-600 transition"
                         onClick={onClose}
                     ></div>
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <span className="ml-2 font-semibold text-yellow-300 select-none">Terminal</span>
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="ml-2 font-semibold text-yellow-200 select-none">Terminal</span>
                 </div>
 
                 {/* Terminal Content */}
                 <div
                     ref={terminalRef}
                     className="p-4 flex-1 overflow-y-auto whitespace-pre-wrap text-xs sm:text-sm md:text-base lg:text-lg"
+                    style={{ background: "transparent" }}
                 >
                     {history.map((line, i) => (
-                        <div key={i} className={i === 0 ? "hidden sm:block" : ""}>
+                        <div key={i} className={i === 0 ? "hidden sm:block text-yellow-300" : ""}>
                             {line}
                         </div>
                     ))}
