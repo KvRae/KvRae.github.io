@@ -1,5 +1,16 @@
 [
   {
+    "logoUrl": "/img/mfz-pixel.png",
+    "role": "Android Developer",
+    "company": "Mafazaa",
+    "period": "Oct 2025 – Present",
+    "description": [
+      "Contributed to building a user-friendly Android app using Kotlin and Jetpack Compose.",
+      "Reviewed code and collaborated with cross-functional teams to ensure high-quality deliverables.",
+        "Implemented new features and optimized app performance based on user feedback."
+    ]
+  },
+  {
     "logoUrl": "/img/pp-pixel.png",
     "role": "UI Developer",
     "company": "PlutopalAI",
