@@ -17,9 +17,9 @@ export default function StartDrawer({ onLogout, buttonSize = "md" }: StartDrawer
             {/* Logo button */}
             <button
                 onClick={() => setOpen(!open)}
-                className={`flex items-center justify-center ${sizeClass} bg-black/40  rounded mr-2 border border-yellow-700/50 hover:bg-yellow-700/70 transition-colors duration-200`}
+                className={`cursor-pointer flex items-center justify-center ${sizeClass} bg-black/40  rounded mr-2 border border-yellow-700/50 hover:bg-yellow-700/70 transition-colors duration-200`}
             >
-                <span className="font-bold text-yellow-300 relative">
+                <span className="font-bold text-yellow-300 relative ">
                     K
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-yellow-300 rounded"></span>
                 </span>
