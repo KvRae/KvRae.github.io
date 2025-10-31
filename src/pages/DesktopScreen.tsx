@@ -91,9 +91,9 @@ export default function DesktopScreen() {
                         <img
                             src={AvatarIcon}
                             alt="About Icon"
-                            className="w-16 h-16 drop-shadow-[0_0_6px_rgba(255,215,0,0.3)]"
+                            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 drop-shadow-[0_0_8px_rgba(255,215,0,0.4)]"
                         />
-                        <span className="text-yellow-200 text-center mt-1">About Me</span>
+                        <span className="text-yellow-200 text-xs sm:text-sm md:text-base mt-1">About Me</span>
                     </button>
 
                     {/* Projects */}
