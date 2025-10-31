@@ -17,19 +17,19 @@ export default function StartDrawer({ onLogout, buttonSize = "md" }: StartDrawer
             {/* Logo button */}
             <button
                 onClick={() => setOpen(!open)}
-                className={`flex items-center justify-center ${sizeClass} bg-gray-800 rounded mr-2 border-2 border-yellow-400`}
+                className={`flex items-center justify-center ${sizeClass} bg-black/40  rounded mr-2 border border-yellow-700/50 hover:bg-yellow-700/70 transition-colors duration-200`}
             >
-                <span className="font-bold text-yellow-400 relative">
+                <span className="font-bold text-yellow-300 relative">
                     K
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-yellow-400 rounded"></span>
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-yellow-300 rounded"></span>
                 </span>
             </button>
 
             {/* Drawer */}
             {open && (
-                <div className="absolute bottom-16 left-0 w-64 md:w-72 bg-gray-900 rounded shadow-lg p-4 flex flex-col space-y-4 z-50">
-                    <div className="text-white font-semibold text-sm md:text-base">Credits</div>
-                    <div className="text-gray-300 text-xs md:text-sm">
+                <div className="absolute bottom-16 left-0 w-64 md:w-72 bg-[#0d0d0e]/95 rounded-lg shadow-[0_0_8px_rgba(255,215,0,0.1)] border border-yellow-700/30 p-4 flex flex-col space-y-4 z-50">
+                    <div className="text-yellow-300 font-semibold text-sm md:text-base">Credits</div>
+                    <div className="text-yellow-100 text-xs md:text-sm">
                         Hello! I put a lot of effort into this portfolio in terms of both development and design.
                         If you appreciate the work, please star the repository on GitHub. Dive in, explore,
                         and learn—don’t just copy the code without understanding it.
@@ -40,7 +40,7 @@ export default function StartDrawer({ onLogout, buttonSize = "md" }: StartDrawer
                         href="https://github.com/KvRae/KvRae.github.io"
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center justify-start space-x-2 px-3 py-2 bg-gray-700 rounded hover:bg-gray-600 text-white text-xs md:text-sm"
+                        className="flex items-center justify-start space-x-2 px-3 py-2 bg-yellow-500 hover:bg-yellow-400 text-black rounded shadow-[0_0_6px_rgba(255,215,0,0.4)] text-xs md:text-sm transition"
                     >
                         <svg className="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 .297a12 12 0 00-3.8 23.4c.6.113.82-.263.82-.582 0-.288-.01-1.05-.015-2.062-3.338.724-4.042-1.61-4.042-1.61-.546-1.39-1.333-1.76-1.333-1.76-1.09-.746.083-.73.083-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.304-5.466-1.333-5.466-5.933 0-1.31.468-2.38 1.236-3.222-.124-.303-.536-1.524.118-3.176 0 0 1.008-.322 3.3 1.23a11.51 11.51 0 016 0c2.29-1.552 3.296-1.23 3.296-1.23.656 1.652.244 2.873.12 3.176.77.842 1.236 1.912 1.236 3.222 0 4.61-2.804 5.625-5.475 5.922.43.37.823 1.096.823 2.21 0 1.595-.015 2.88-.015 3.27 0 .322.216.697.825.58A12 12 0 0012 .297z"/>
@@ -51,7 +51,7 @@ export default function StartDrawer({ onLogout, buttonSize = "md" }: StartDrawer
                     {/* Logout button */}
                     <button
                         onClick={onLogout}
-                        className="flex items-center justify-start space-x-2 px-3 py-2 bg-red-600 rounded hover:bg-red-700 text-white text-xs md:text-sm cursor-pointer"
+                        className="flex items-center justify-start space-x-2 px-3 py-2 bg-red-600 rounded hover:bg-red-700 text-white text-xs md:text-sm cursor-pointer transition-colors duration-200"
                     >
                         <FiPower size={16} />
                         <span>Logout</span>

@@ -1,4 +1,3 @@
-// src/components/CrackTerminalModal.tsx
 import { useEffect, useRef, useState } from "react";
 import TerminalInput from "../../TerminalInput.tsx";
 
@@ -17,7 +16,7 @@ export default function CrackTerminalModal({ onClose }: Props) {
         "                                                    ",
         "Password Cracking Utility v3.14.15",
         "Developed by Kvrae for ethical hacking simulations.",
-        "                                                 ",
+        "",
         "Initializing brute-force protocol...",
         "Type 'help' for available commands.",
         ""
@@ -91,13 +90,23 @@ export default function CrackTerminalModal({ onClose }: Props) {
             push("Scanning target filesystem for credential artifacts...");
             for (let i = 1; i <= 4; i++) {
                 await new Promise<void>((res) =>
-                    setTimeout(() => { push(`  scanning sector ${i * 128}...`); res(); }, 200 * i)
+                    setTimeout(() => {
+                        push(`  scanning sector ${i * 128}...`);
+                        res();
+                    }, 200 * i)
                 );
             }
             const h = makeFakeHash();
             setFoundHash(h);
             setState("ready");
-            push("", "Scan complete. Found candidate hash:","                   ",`${h}`,"                       ", "Use `decrypt <hash>` to attempt decryption.");
+            push(
+                "",
+                "Scan complete. Found candidate hash:",
+                "",
+                `${h}`,
+                "",
+                "Use `decrypt <hash>` to attempt decryption."
+            );
             return;
         }
 
@@ -130,9 +139,8 @@ export default function CrackTerminalModal({ onClose }: Props) {
 
             try {
                 const password = await simulatedDecrypt();
-                push('','','')
                 push("", "Decryption successful:", `  Decrypted password: ${password}`, "");
-                push("", "Exit the terminal and try the password", ``, "");
+                push("", "Exit the terminal and try the password", "", "");
             } catch {
                 push("Decryption failed: unknown error");
             } finally {
@@ -147,41 +155,42 @@ export default function CrackTerminalModal({ onClose }: Props) {
     return (
         // Overlay: dims background but does not replace it
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-            {/* dimmer */}
+            {/* Dimmer overlay */}
             <div
-                className="absolute inset-0 bg-black/50"
+                className="absolute inset-0 bg-black/60 backdrop-blur-sm"
                 onClick={onClose}
                 aria-hidden
             />
 
-            {/* Modal window: centered panel only */}
+            {/* Modal window */}
             <div
-                className="relative bg-black text-green-400 rounded-lg shadow-2xl w-[720px] max-w-[92%] h-[420px] max-h-[85%] flex flex-col z-60"
+                className="relative bg-[#0b0b0d] text-yellow-400 rounded-lg shadow-[0_0_25px_rgba(255,215,0,0.3)] w-[720px] max-w-[92%] h-[420px] max-h-[85%] flex flex-col border border-yellow-800/40"
                 role="dialog"
                 aria-modal="true"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Title bar */}
-                <div className="flex items-center gap-3 px-3 py-2 bg-gray-800 rounded-t-lg">
-                    <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer" onClick={onClose} />
+                <div className="flex items-center gap-3 px-3 py-2 bg-[#1a1a10] border-b border-yellow-800/40 rounded-t-lg">
+                    <div
+                        className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"
+                        onClick={onClose}
+                    />
                     <div className="w-3 h-3 bg-yellow-500 rounded-full" />
                     <div className="w-3 h-3 bg-green-500 rounded-full" />
-                    <div className="ml-3 text-sm text-gray-200 font-semibold">kv-box tool</div>
-                    <div className="ml-auto text-xs text-gray-400 pr-2">password cracking</div>
+                    <div className="ml-3 text-sm text-yellow-200 font-semibold">kv-box tool</div>
+                    <div className="ml-auto text-xs text-yellow-500 pr-2">password cracking</div>
                 </div>
 
                 {/* Content */}
-
                 <div
                     ref={scrollRef}
                     className="p-4 font-mono flex-1 overflow-y-auto whitespace-pre-wrap text-xs sm:text-sm md:text-base"
                     style={{ background: "transparent" }}
                 >
                     {history.map((line, i) => {
-                        // Hide ASCII art lines on small screens
                         if (i === 0) {
                             return (
-                                <div key={i} className="hidden sm:block">
+                                <div key={i} className="hidden sm:block text-yellow-300">
                                     {line}
                                 </div>
                             );

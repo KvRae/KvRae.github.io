@@ -18,13 +18,17 @@
   },
   {
     "name": "MINE",
-    "description": "Android Indoor Navigation Module (Kotlin, Jetpack Compose, RoomDB, Firebase, CI/CD)",
-    "link": "https://kvrae.github.io/MINE-Docs/"
+    "description": "Android Indoor Navigation Module (Kotlin, Jetpack Compose, Android, Firebase, CI/CD)",
+    "link": "https://kvrae.github.io/MINE-Docs/",
+    "github": "https://github.com/KvRae/MINE-Docs"
   },
   {
     "name": "BackAppX",
-    "description": "BaaS platform (MERN, Flutter, Docker)",
-    "link": "https://backappx.github.io/BackAppX-Website/"
+    "description": "BaaS platform (MERN, Mobile, Android Docker)",
+    "link": "https://backappx.github.io/BackAppX-Website/",
+    "github": "https://github.com/BackAppX"
+
+
   },
   {
     "name": "Slikoo",

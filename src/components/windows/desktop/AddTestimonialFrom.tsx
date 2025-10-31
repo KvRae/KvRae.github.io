@@ -1,13 +1,20 @@
 import { useState, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
-import {EMAIL_PUBLIC_KEY, EMAIL_SERVICE_ID, TESTM_TEMPLATE_ID} from "../../../utils/consts.ts";
+import {
+    EMAIL_PUBLIC_KEY,
+    EMAIL_SERVICE_ID,
+    TESTM_TEMPLATE_ID,
+} from "../../../utils/consts.ts";
 
 interface AddTestimonialFormProps {
     onCancel: () => void;
     onStatusChange?: (status: string) => void; // optional callback to parent
 }
 
-export default function AddTestimonialForm({ onCancel, onStatusChange }: AddTestimonialFormProps) {
+export default function AddTestimonialForm({
+                                               onCancel,
+                                               onStatusChange,
+                                           }: AddTestimonialFormProps) {
     const [imageLink, setImageLink] = useState("");
     const [name, setName] = useState("");
     const [message, setMessage] = useState("");
@@ -36,50 +43,57 @@ export default function AddTestimonialForm({ onCancel, onStatusChange }: AddTest
                 templateParams,
                 EMAIL_PUBLIC_KEY
             );
-            onStatusChange?.("Testimonial sent! It will be added soon!");
-            setImageLink("")
+            onStatusChange?.("✨ Testimonial sent! It will be added soon!");
+            setImageLink("");
             setName("");
             setMessage("");
             onCancel(); // hide form after successful send
         } catch (error) {
             console.error(error);
-            onStatusChange?.("Failed to send. Please try again.");
+            onStatusChange?.("⚠️ Failed to send. Please try again.");
         } finally {
             setSending(false);
         }
     };
 
     return (
-        <form className="p-4 space-y-4 bg-gray-800 rounded" onSubmit={handleSubmit}>
+        <form
+            className="p-4 space-y-4 bg-[#0d0d0e]/95 rounded-lg border border-yellow-700/30 shadow-[0_0_8px_rgba(255,215,0,0.1)]"
+            onSubmit={handleSubmit}
+        >
             <div>
-                <label className="block text-gray-400 mb-1">Image url (we use cdn images)</label>
+                <label className="block text-yellow-300 mb-1">
+                    Image URL <span className="text-yellow-600 text-xs">(use a CDN link)</span>
+                </label>
                 <input
                     type="text"
                     value={imageLink}
                     onChange={(e) => setImageLink(e.target.value)}
                     placeholder="Your avatar image URL"
-                    className="w-full p-2 rounded border border-gray-700 bg-gray-900 text-white outline-none"
+                    className="w-full p-2 rounded border border-yellow-700/40 bg-[#121212] text-yellow-100 placeholder-yellow-700 outline-none focus:ring-1 focus:ring-yellow-500 disabled:opacity-60"
                     disabled={sending}
                 />
             </div>
+
             <div>
-                <label className="block text-gray-400 mb-1">Name</label>
+                <label className="block text-yellow-300 mb-1">Name</label>
                 <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Your name"
-                    className="w-full p-2 rounded border border-gray-700 bg-gray-900 text-white outline-none"
+                    className="w-full p-2 rounded border border-yellow-700/40 bg-[#121212] text-yellow-100 placeholder-yellow-700 outline-none focus:ring-1 focus:ring-yellow-500 disabled:opacity-60"
                     disabled={sending}
                 />
             </div>
+
             <div>
-                <label className="block text-gray-400 mb-1">Message</label>
+                <label className="block text-yellow-300 mb-1">Message</label>
                 <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Write your testimonial..."
-                    className="w-full p-2 rounded border border-gray-700 bg-gray-900 text-white outline-none resize-none h-24"
+                    className="w-full p-2 rounded border border-yellow-700/40 bg-[#121212] text-yellow-100 placeholder-yellow-700 outline-none focus:ring-1 focus:ring-yellow-500 disabled:opacity-60 resize-none h-24"
                     disabled={sending}
                 />
             </div>
@@ -88,14 +102,15 @@ export default function AddTestimonialForm({ onCancel, onStatusChange }: AddTest
                 <button
                     type="button"
                     onClick={onCancel}
-                    className="px-4 py-2 bg-gray-600 rounded hover:bg-gray-500 text-white"
+                    className="px-4 py-2 rounded bg-yellow-800/40 hover:bg-yellow-700/50 text-yellow-200 transition disabled:opacity-60"
                     disabled={sending}
                 >
                     Cancel
                 </button>
+
                 <button
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 text-white"
+                    className="px-4 py-2 rounded bg-yellow-500 hover:bg-yellow-400 text-black font-semibold shadow-[0_0_6px_rgba(255,215,0,0.4)] transition disabled:opacity-60"
                     disabled={sending}
                 >
                     {sending ? "Sending..." : "Send"}

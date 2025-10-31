@@ -1,4 +1,3 @@
-// src/TerminalInput.tsx
 import { useState, type KeyboardEvent } from "react";
 
 interface TerminalInputProps {
@@ -16,14 +15,20 @@ export default function TerminalInput({ onEnter }: TerminalInputProps) {
     };
 
     return (
-        <div className="flex">
-            <span className="pr-2 text-green-400 font-mono">kvrae@kvrae:~$</span>
+        <div className="flex items-center">
+            {/* Terminal prompt */}
+            <span className="pr-2 text-yellow-400 font-mono drop-shadow-[0_0_4px_rgba(255,215,0,0.6)]">
+                kvrae@kvrae:~$
+            </span>
+
+            {/* Input field */}
             <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="bg-black outline-none text-green-400 flex-1 font-mono"
+                className="bg-transparent outline-none text-yellow-300 flex-1 font-mono caret-yellow-400 placeholder-yellow-700"
                 autoFocus
+                spellCheck={false}
             />
         </div>
     );

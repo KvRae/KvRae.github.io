@@ -32,19 +32,18 @@ export default function SplashScreen() {
         let width = (canvas.width = window.innerWidth);
         let height = (canvas.height = window.innerHeight);
 
-        // Use only K, V, R, A, E (uppercase & lowercase for variation)
         const letters = "KVRAEkvrae";
         const fontSize = 16;
         const columns = Math.floor(width / fontSize);
         const drops = new Array(columns).fill(1);
 
         const draw = () => {
-            // Soft, cool background overlay
-            ctx.fillStyle = "rgba(10, 20, 25, 0.08)";
+            // dark soft background overlay
+            ctx.fillStyle = "rgba(10, 10, 5, 0.08)";
             ctx.fillRect(0, 0, width, height);
 
-            // Gentle teal-blue color for the falling letters
-            ctx.fillStyle = "rgba(0, 255, 200, 0.35)";
+            // golden-yellow glow for falling letters
+            ctx.fillStyle = "rgba(255, 215, 0, 0.35)"; // gold-yellow
             ctx.font = `${fontSize}px monospace`;
 
             for (let i = 0; i < drops.length; i++) {
@@ -87,9 +86,11 @@ export default function SplashScreen() {
                 <img
                     src={avatarImage}
                     alt="Avatar"
-                    className="w-32 h-32 rounded-full mb-2 border border-[#00bcd4]/30 shadow-lg"
+                    className="w-32 h-32 rounded-full mb-2 border border-yellow-400/40 shadow-[0_0_15px_rgba(255,215,0,0.2)]"
                 />
-                <div className="text-[#ccfaff] text-lg mb-6 tracking-wide">Kvrae</div>
+                <div className="text-yellow-200 text-lg mb-6 tracking-wide drop-shadow-[0_0_6px_rgba(255,255,100,0.5)]">
+                    Kvrae
+                </div>
 
                 <div className="flex items-center space-x-2 mb-2">
                     <PasswordInput
@@ -101,7 +102,7 @@ export default function SplashScreen() {
                     />
                     <button
                         onClick={handleLogin}
-                        className="px-2 py-2 bg-[#007bff] rounded hover:bg-[#006ae0] text-white flex items-center justify-center transition"
+                        className="px-2 py-2 bg-yellow-500 rounded hover:bg-yellow-400 text-black font-semibold flex items-center justify-center transition shadow-[0_0_8px_rgba(255,215,0,0.5)]"
                     >
                         <FiArrowRight size={20} />
                     </button>
@@ -111,9 +112,9 @@ export default function SplashScreen() {
 
                 <div className="text-gray-400 text-sm cursor-pointer relative group">
                     Do you want a hint?
-                    <span className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-white text-xs rounded px-2 py-1">
-            look for a tool below...
-          </span>
+                    <span className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-yellow-100 text-xs rounded px-2 py-1">
+                        look for a tool below...
+                    </span>
                 </div>
 
                 <TerminalButton />
