@@ -23,20 +23,27 @@ export default function SplashScreen() {
         }
     };
 
+    // Handle Enter key press
     const handleKeyPress = (e: React.KeyboardEvent) => {
-        if (e.key === 'Enter') handleLogin();
+        if (e.key === 'Enter') {
+            handleLogin();
+        }
     };
 
+    // Prevent unwanted scroll behaviors
     useEffect(() => {
         if (!authenticated) {
             document.body.style.overflow = 'hidden';
             document.body.style.overscrollBehavior = 'none';
             document.documentElement.style.overscrollBehavior = 'none';
 
+            // Prevent zoom on double tap on mobile
             let lastTouchEnd = 0;
             const preventZoom = (e: TouchEvent) => {
                 const now = Date.now();
-                if (now - lastTouchEnd <= 300) e.preventDefault();
+                if (now - lastTouchEnd <= 300) {
+                    e.preventDefault();
+                }
                 lastTouchEnd = now;
             };
 
@@ -51,6 +58,7 @@ export default function SplashScreen() {
         }
     }, [authenticated]);
 
+    // Kvrae letters background animation
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -61,22 +69,27 @@ export default function SplashScreen() {
         let height = (canvas.height = window.innerHeight);
 
         const letters = "KVRAEkvrae";
+        // Responsive font size
         const fontSize = window.innerWidth < 640 ? 12 : 16;
         const columns = Math.floor(width / fontSize);
         const drops = new Array(columns).fill(1);
 
         const draw = () => {
+            // dark soft background overlay
             ctx.fillStyle = "rgba(10, 10, 5, 0.08)";
             ctx.fillRect(0, 0, width, height);
 
-            ctx.fillStyle = "rgba(255, 215, 0, 0.35)";
+            // golden-yellow glow for falling letters
+            ctx.fillStyle = "rgba(255, 215, 0, 0.35)"; // gold-yellow
             ctx.font = `${fontSize}px monospace`;
 
             for (let i = 0; i < drops.length; i++) {
                 const text = letters[Math.floor(Math.random() * letters.length)];
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-                if (drops[i] * fontSize > height && Math.random() > 0.975) drops[i] = 0;
+                if (drops[i] * fontSize > height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
                 drops[i]++;
             }
         };
@@ -105,7 +118,7 @@ export default function SplashScreen() {
                 className="absolute top-0 left-0 w-full h-full opacity-60 blur-[1px]"
             />
 
-            {/* Login content - This container holds all the main login elements */}
+            {/* Login content */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6">
                 <img
                     src={avatarImage}
@@ -118,8 +131,7 @@ export default function SplashScreen() {
 
                 <div
                     className="flex items-center space-x-2 mb-2 w-full max-w-[16rem]"
-                    onKeyDown={handleKeyPress}
-                >
+                     onKeyDown={handleKeyPress}>
                     <PasswordInput
                         password={password}
                         setPassword={(val) => {
@@ -142,18 +154,15 @@ export default function SplashScreen() {
                     </div>
                 )}
 
-                <div className="text-gray-400 text-xs sm:text-sm cursor-pointer relative group touch-manipulation">
+                <div className="text-gray-400 text-xs sm:text-sm cursor-pointer relative group mb-4 sm:mb-6 touch-manipulation">
                     Do you want a hint?
                     <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity bg-gray-800 text-yellow-100 text-xs rounded px-2 py-1 whitespace-nowrap pointer-events-none">
-                look for a tool below...
-            </span>
+                        look for a tool below...
+                    </span>
                 </div>
-
-            </div>
-            <div
-                className="w-full max-w-xs sm:max-w-sm mx-auto **fixed** left-0 right-0 **z-20** px-4 **bottom-4 sm:bottom-6**"
-            >
-                <TerminalButton />
+                <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-30">
+                    <TerminalButton />
+                </div>
             </div>
         </div>
     );
