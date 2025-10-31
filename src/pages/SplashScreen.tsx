@@ -149,10 +149,6 @@ export default function SplashScreen() {
             </span>
                 </div>
 
-                {/*
-            NOTE: I removed the original empty div with mb-4/6 here
-            because the TerminalButton is moving outside this container
-        */}
             </div>
             <div
                 className="w-full max-w-xs sm:max-w-sm mx-auto **fixed** left-0 right-0 **z-20** px-4 **bottom-4 sm:bottom-6**"

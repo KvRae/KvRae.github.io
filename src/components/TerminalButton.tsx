@@ -6,10 +6,14 @@ export default function TerminalButton() {
 
     return (
         <>
+            {/*
+                REMOVED: absolute bottom-4 left-4
+                ADDED: flex justify-center w-full (or simply centering it based on your goal)
+            */}
             <button
                 onClick={() => setOpen(true)}
                 className="
-                    absolute bottom-4 left-4
+                    flex justify-center w-full
                     bg-[#0b0b0d] hover:bg-[#1a1a10]
                     border border-yellow-800/40
                     p-3 rounded-full
