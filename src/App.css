@@ -10,3 +10,17 @@
     background-size: 200% 200%;
     animation: gradientMove 10s ease infinite;
 }
+
+.glow-svg svg {
+  filter: drop-shadow(0 0 10px #F4CE14)
+          drop-shadow(0 0 20px #F4CE14)
+          drop-shadow(0 0 30px #F4CE14);
+  transition: filter 0.3s ease;
+}
+
+.glow-svg svg:hover {
+  filter: drop-shadow(0 0 20px #F4CE14)
+          drop-shadow(0 0 40px #F4CE14)
+          drop-shadow(0 0 60px #F4CE14);
+}
+
