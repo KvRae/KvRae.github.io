@@ -24,3 +24,11 @@
           drop-shadow(0 0 60px #F4CE14);
 }
 
+@keyframes pulse {
+  0%, 100% { filter: drop-shadow(0 0 10px #F4CE14); }
+  50% { filter: drop-shadow(0 0 25px #F4CE14); }
+}
+
+.glow-svg svg {
+  animation: pulse 2s infinite ease-in-out;
+}
