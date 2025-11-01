@@ -55,13 +55,12 @@ export default function BootScreen({ onFinish }: BootScreenProps) {
 
     <div className="text-yellow-300 relative z-10 flex flex-col items-center px-4 sm:px-6 w-full max-w-md">
       {/* Glowing SVG */}
-      <div className="glow-svg mb-4">
+      <div className="glow-svg mb-8">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="127"
-          height="131"
-          viewBox="0 0 127 131"
-          fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-20 h-auto sm:w-24"  // smaller size here
+            viewBox="0 0 127 131"
+            fill="none"
         >
           <rect
             x="3.5"
