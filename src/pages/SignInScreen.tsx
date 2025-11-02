@@ -132,7 +132,7 @@ export default function SignInScreen() {
                     />
                     <button
                         onClick={handleLogin}
-                        className="px-2 py-2 bg-yellow-500 rounded hover:bg-yellow-400 active:bg-yellow-600 text-black font-semibold flex items-center justify-center transition shadow-[0_0_8px_rgba(255,215,0,0.5)] touch-manipulation shrink-0"
+                        className="px-2 py-2 bg-yellow-500 rounded hover:bg-yellow-400 active:bg-yellow-600 text-black font-semibold flex items-center justify-center transition shadow-[0_0_8px_rgba(255,215,0,0.5)] touch-manipulation shrink-0 cursor-pointer"
                         aria-label="Login"
                     >
                         <FiArrowRight size={20} />
