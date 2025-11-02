@@ -1,5 +1,5 @@
 import './App.css'
-import SplashScreen from "./pages/SplashScreen.tsx";
+import SignInScreen from "./pages/SignInScreen.tsx";
 import BootScreen from "./pages/BootScreen.tsx";
 import {useState} from "react";
 
@@ -11,7 +11,7 @@ export default function App() {
             {!booted ? (
                 <BootScreen onFinish={() => setBooted(true)} />
             ) : (
-                <SplashScreen />
+                <SignInScreen />
             )}
         </>
     );

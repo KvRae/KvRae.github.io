@@ -7,7 +7,7 @@ import TerminalButton from "../components/TerminalButton.tsx";
 import CrackTerminal from "../components/windows/desktop/CrackTerminal.tsx";
 import * as React from "react";
 
-export default function SplashScreen() {
+export default function SignInScreen() {
     const [authenticated, setAuthenticated] = useState(false);
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -153,7 +153,7 @@ export default function SplashScreen() {
                 </div>
 
                 {/* Terminal Button */}
-                <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-30">
+                <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-30 cursor-pointer">
                     <TerminalButton onClick={() => setTerminalOpen(true)} />
                 </div>
             </div>
