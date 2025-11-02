@@ -153,7 +153,7 @@ export default function SignInScreen() {
                 </div>
 
                 {/* Terminal Button */}
-                <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-30 cursor-pointer">
+                <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-30 ">
                     <TerminalButton onClick={() => setTerminalOpen(true)} />
                 </div>
             </div>

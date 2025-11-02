@@ -12,6 +12,7 @@ export default function TerminalButton({ onClick }: { onClick: () => void }) {
                 shadow-[0_0_15px_rgba(255,215,0,0.6)]
                 transition-transform transform hover:scale-110
                 focus:outline-none
+                cursor-pointer
             "
             aria-label="Open Terminal"
         >
