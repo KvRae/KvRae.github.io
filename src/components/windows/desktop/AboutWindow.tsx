@@ -39,9 +39,9 @@ export default function AboutWindow({
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-2 sm:p-4">
-            <div className="bg-[#0d0d0f]/95 border border-yellow-800/40 rounded-xl shadow-[0_0_15px_rgba(255,215,0,0.15)] w-full max-w-3xl h-[600px] overflow-hidden text-yellow-100">
+            <div className="bg-[#0d0d0f]/95 border border-yellow-800/40 rounded-xl shadow-[0_0_15px_rgba(255,215,0,0.15)] w-full max-w-3xl h-[600px] overflow-hidden text-yellow-100 flex flex-col">
                 {/* Android Studio Header - Mac Style */}
-                <div className="flex items-center justify-between px-2 sm:px-3 py-2 bg-[#1a1a1d] border-b border-yellow-800/30 rounded-t-xl">
+                <div className="flex items-center justify-between px-2 sm:px-3 py-2 bg-[#1a1a1d] border-b border-yellow-800/30 rounded-t-xl flex-shrink-0">
                     <div className="flex items-center space-x-2">
                         <div className="flex items-center space-x-2">
                             <button className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-600 transition" onClick={onClose}></button>
@@ -54,7 +54,7 @@ export default function AboutWindow({
                 </div>
 
                 {/* Tab Bar */}
-                <div className="flex bg-[#141414] border-b border-yellow-800/20 overflow-x-auto">
+                <div className="flex bg-[#141414] border-b border-yellow-800/20 overflow-x-auto flex-shrink-0">
                     {(["profile", "skills", "contact"] as const).map((tab) => (
                         <button
                             key={tab}
@@ -74,35 +74,37 @@ export default function AboutWindow({
                 </div>
 
                 {/* Content Area */}
-                <div className="flex flex-col sm:flex-row">
+                <div className="flex flex-1 overflow-hidden">
                     {/* Sidebar - Project Structure - Hidden on mobile */}
-                    <div className="hidden sm:block w-48 bg-[#141414] border-r border-yellow-800/20 p-3 text-xs font-mono overflow-y-auto h-[490px]">
-                        <div className="text-yellow-400 mb-3 font-semibold text-[11px]">PROJECT</div>
-                        <div className="space-y-1 text-yellow-100/70">
-                            <div className="flex items-center gap-1">
-                                <span className="text-yellow-500">▼</span> app
-                            </div>
-                            <div className="ml-4 flex items-center gap-1">
-                                <span className="text-yellow-500">▼</span> src
-                            </div>
-                            <div className="ml-8 flex items-center gap-1">
-                                <span className="text-yellow-500">▼</span> main
-                            </div>
-                            <div className="ml-12 flex items-center gap-1">
-                                <span className="text-yellow-500">▼</span> kotlin
-                            </div>
-                            <div className="ml-16 flex items-center gap-1 text-yellow-300">
-                                <span>📄</span> Profile.kt
-                            </div>
-                            <div className="ml-16 flex items-center gap-1 text-yellow-300">
-                                <span>📄</span> Skills.kt
-                            </div>
-                            <div className="ml-16 flex items-center gap-1 text-yellow-300">
-                                <span>📄</span> Contact.kt
+                    <div className="hidden sm:flex sm:flex-col w-48 bg-[#141414] border-r border-yellow-800/20 p-3 text-xs font-mono overflow-y-auto">
+                        <div>
+                            <div className="text-yellow-400 mb-3 font-semibold text-[11px]">PROJECT</div>
+                            <div className="space-y-1 text-yellow-100/70">
+                                <div className="flex items-center gap-1">
+                                    <span className="text-yellow-500">▼</span> app
+                                </div>
+                                <div className="ml-4 flex items-center gap-1">
+                                    <span className="text-yellow-500">▼</span> src
+                                </div>
+                                <div className="ml-8 flex items-center gap-1">
+                                    <span className="text-yellow-500">▼</span> main
+                                </div>
+                                <div className="ml-12 flex items-center gap-1">
+                                    <span className="text-yellow-500">▼</span> kotlin
+                                </div>
+                                <div className="ml-16 flex items-center gap-1 text-yellow-300">
+                                    <span>📄</span> Profile.kt
+                                </div>
+                                <div className="ml-16 flex items-center gap-1 text-yellow-300">
+                                    <span>📄</span> Skills.kt
+                                </div>
+                                <div className="ml-16 flex items-center gap-1 text-yellow-300">
+                                    <span>📄</span> Contact.kt
+                                </div>
                             </div>
                         </div>
 
-                        <div className="mt-6">
+                        <div className="mt-auto pt-3">
                             <img
                                 src={avatar}
                                 alt="Avatar"
@@ -112,7 +114,7 @@ export default function AboutWindow({
                     </div>
 
                     {/* Code Editor Area */}
-                    <div className="flex-1 p-2 sm:p-4 overflow-y-auto h-[490px] bg-[#0b0b0d]">
+                    <div className="flex-1 p-2 sm:p-4 overflow-y-auto bg-[#0b0b0d]">
                         <div className="font-mono text-xs sm:text-sm leading-relaxed">
                             {/* Line Numbers */}
                             <div className="flex">
@@ -162,8 +164,23 @@ export default function AboutWindow({
                     </div>
                 </div>
 
+                {/* Build Console Area */}
+                <div className="border-t border-yellow-800/20 bg-[#0b0b0d] h-28 overflow-y-auto flex-shrink-0">
+                    <div className="flex items-center gap-2 px-3 py-1 bg-[#141414] border-b border-yellow-800/20">
+                        <span className="text-[10px] text-yellow-400 font-semibold">BUILD</span>
+                        <span className="text-[9px] text-yellow-100/60">Gradle Build</span>
+                    </div>
+                    <div className="p-2 font-mono text-[10px] sm:text-[11px] text-yellow-100/80 space-y-0.5">
+                        <div className="text-yellow-400">&gt; Task :app:compileKotlin</div>
+                        <div className="text-yellow-100/60">Compiling with Kotlin compiler version 1.9.20</div>
+                        <div className="text-green-400">&gt; Task :app:build SUCCESS</div>
+                        <div className="text-yellow-100/60 mt-1">BUILD SUCCESSFUL in 2s</div>
+                        <div className="text-yellow-100/60">3 actionable tasks: 3 executed</div>
+                    </div>
+                </div>
+
                 {/* Status Bar */}
-                <div className="flex items-center justify-between px-2 sm:px-3 py-0.5 bg-[#1a1a1d] text-[10px] sm:text-[11px] font-mono text-yellow-100/70 border-t border-yellow-800/30">
+                <div className="flex items-center justify-between px-2 sm:px-3 py-0.5 bg-[#1a1a1d] text-[10px] sm:text-[11px] font-mono text-yellow-100/70 border-t border-yellow-800/30 flex-shrink-0">
                     <div className="flex items-center gap-3 sm:gap-4">
                         <span className="flex items-center gap-1">
                             <span className="w-3 h-3 rounded-sm bg-yellow-500 flex items-center justify-center text-[8px] text-black font-bold">K</span>
