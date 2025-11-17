@@ -186,7 +186,8 @@ export default function AboutWindow({
                                     {activeTab === "contact" && (
                                         <code className="text-[11px] sm:text-sm break-words">
                                             <div className="flex items-center gap-1">
-                                            <div className="text-yellow-500">data class</div><div className="text-yellow-300">Contact(</div>
+                                            <span className="text-yellow-500">data class</span>
+                                            <span className="text-yellow-300">Contact(</span>
                                             </div>
                                             <div className="pl-4">
                                                 <div className="">
