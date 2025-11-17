@@ -48,8 +48,51 @@ export default function AboutWindow({
                             <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                         </div>
-                        <span className="ml-2 sm:ml-3 font-semibold text-yellow-200">com.kvrae.aboutme</span>
+                        <span className="ml-2 sm:ml-3 font-semibold text-yellow-200">com.kvrae.about</span>
                         <span className="text-[10px] sm:text-xs text-yellow-400 ml-1">●</span>
+                    </div>
+                </div>
+
+                {/* Toolbar - Project Name & Build Actions */}
+                <div className="flex items-center justify-between px-3 py-1.5 bg-[#141414] border-b border-yellow-800/20 flex-shrink-0">
+                    <div className="flex items-center gap-2">
+                        {/* Android Logo */}
+                        <svg className="w-4 h-4 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.6,9.48l1.84-3.18c0.16-0.31,0.04-0.69-0.26-0.85c-0.29-0.15-0.65-0.06-0.83,0.22l-1.88,3.24 c-2.86-1.21-6.08-1.21-8.94,0L5.65,5.67c-0.19-0.29-0.58-0.38-0.87-0.2C4.5,5.65,4.41,6.01,4.56,6.3L6.4,9.48 C3.3,11.25,1.28,14.44,1,18h22C22.72,14.44,20.7,11.25,17.6,9.48z M7,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25S8.25,13.31,8.25,14C8.25,14.69,7.69,15.25,7,15.25z M17,15.25c-0.69,0-1.25-0.56-1.25-1.25 c0-0.69,0.56-1.25,1.25-1.25s1.25,0.56,1.25,1.25C18.25,14.69,17.69,15.25,17,15.25z"/>
+                        </svg>
+                        <span className="text-yellow-200 text-xs font-semibold">KvRae Portfolio</span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                        {/* Build/Make Project */}
+                        <button
+                            className="p-1.5 rounded hover:bg-yellow-800/20 transition text-yellow-100/70 hover:text-yellow-200"
+                            title="Build Project"
+                        >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </button>
+
+                        {/* Run */}
+                        <button
+                            className="p-1.5 rounded bg-green-600/80 hover:bg-green-600 transition text-white"
+                            title="Run"
+                        >
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+
+                        {/* Debug */}
+                        <button
+                            className="p-1.5 rounded hover:bg-yellow-800/20 transition text-yellow-100/70 hover:text-yellow-200"
+                            title="Debug"
+                        >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
