@@ -1,5 +1,32 @@
 {
   "avatar": "/img/avatar-pixels.png",
   "fullName": "Karam Mannai ",
-  "aboutMe": "I am a passionate engineer with experience in creating interactive UIs, building projects, and collaborating on professional software development. I love learning new technologies and improving my coding skills."
+  "aboutMe": "I am a passionate engineer with experience in creating interactive UIs, building projects, and collaborating on professional software development. I love learning new technologies and improving my coding skills.",
+  "role": "Mobile Engineer",
+    "location": "Tunis, Tunisia",
+    "socials": {
+    "linkedin": "https://www.linkedin.com/in/karam-mannai",
+    "github": "https://github.com/KvRae",
+    "twitter": "https://twitter.com/KvRae_",
+    "facebook": "https://www.facebook.com/karam.mannai.7"
+    },
+    "contactEmail": "karam.mannai@hotmail.com",
+    "phone": "+216 99 026 017",
+    "resume": "https://kvrae.github.io/KaramMannaiResume/",
+    "skills": [
+      "Kotlin",
+      "Java",
+      "Flutter",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Express.js",
+      "Tailwind CSS",
+      "MongoDB",
+      "Git",
+      "Docker",
+      "CI/CD"
+
+    ]
 }
