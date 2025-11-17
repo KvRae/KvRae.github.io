@@ -37,6 +37,16 @@ export default function AboutWindow({
         contact: `data class Contact(\n    val email: String = "${contactEmail || 'N/A'}",\n    val phone: String = "${phone || 'N/A'}",\n    val github: String = "${socials?.github || 'N/A'}",\n    val linkedin: String = "${socials?.linkedin || 'N/A'}",\n    val twitter: String = "${socials?.twitter || 'N/A'}"\n)`
     };
 
+    // helper functions to normalize hrefs
+    const emailHref = contactEmail ? `mailto:${contactEmail}` : undefined;
+    const phoneHref = phone ? `tel:${phone}` : undefined;
+    const normalizeUrl = (u?: string) => {
+        if (!u) return undefined;
+        if (u.startsWith('http://') || u.startsWith('https://')) return u;
+        // allow usernames like 'github.com/kvrae' or full domains 'github.com'
+        return `https://${u}`;
+    };
+
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-2 sm:p-4">
             <div className="bg-[#0d0d0f]/95 border border-yellow-800/40 rounded-xl shadow-[0_0_15px_rgba(255,215,0,0.15)] w-full max-w-3xl h-[600px] overflow-hidden text-yellow-100 flex flex-col">
@@ -196,13 +206,71 @@ export default function AboutWindow({
                                     )}
                                     {activeTab === "contact" && (
                                         <code className="text-[11px] sm:text-sm break-words">
-                                            <span className="text-yellow-500">data class</span> <span className="text-yellow-300">Contact</span>{'(\n'}
-                                            {'    '}<span className="text-yellow-500">val</span> <span className="text-yellow-200">email</span>: <span className="text-yellow-300">String</span> = <span className="text-green-400 break-words">"{contactEmail || 'N/A'}"</span>,<br/>
-                                            {'    '}<span className="text-yellow-500">val</span> <span className="text-yellow-200">phone</span>: <span className="text-yellow-300">String</span> = <span className="text-green-400 break-words">"{phone || 'N/A'}"</span>,<br/>
-                                            {'    '}<span className="text-yellow-500">val</span> <span className="text-yellow-200">github</span>: <span className="text-yellow-300">String</span> = <span className="text-green-400 break-words">"{socials?.github || 'N/A'}"</span>,<br/>
-                                            {'    '}<span className="text-yellow-500">val</span> <span className="text-yellow-200">linkedin</span>: <span className="text-yellow-300">String</span> = <span className="text-green-400 break-words">"{socials?.linkedin || 'N/A'}"</span>,<br/>
-                                            {'    '}<span className="text-yellow-500">val</span> <span className="text-yellow-200">twitter</span>: <span className="text-yellow-300">String</span> = <span className="text-green-400 break-words">"{socials?.twitter || 'N/A'}"</span><br/>
-                                            {')'}
+                                            <div className="text-yellow-500">data class</div>
+                                            <div className="text-yellow-300">Contact(</div>
+
+                                            <div className="pl-4">
+                                                <div className="">
+                                                    <span className="text-yellow-500">val</span> <span className="text-yellow-200">email</span>: <span className="text-yellow-300">String</span> ={' '}
+                                                    {contactEmail ? (
+                                                        <a href={emailHref} target="_blank" rel="noopener noreferrer" className="text-green-400 underline decoration-yellow-500">
+                                                            {contactEmail}
+                                                        </a>
+                                                    ) : (
+                                                        <span className="text-green-400">N/A</span>
+                                                    )}
+                                                    ,
+                                                </div>
+
+                                                <div>
+                                                    <span className="text-yellow-500">val</span> <span className="text-yellow-200">phone</span>: <span className="text-yellow-300">String</span> ={' '}
+                                                    {phone ? (
+                                                        <a href={phoneHref} target="_blank" rel="noopener noreferrer" className="text-green-400 underline decoration-yellow-500">
+                                                            {phone}
+                                                        </a>
+                                                    ) : (
+                                                        <span className="text-green-400">N/A</span>
+                                                    )}
+                                                    ,
+                                                </div>
+
+                                                <div>
+                                                    <span className="text-yellow-500">val</span> <span className="text-yellow-200">github</span>: <span className="text-yellow-300">String</span> ={' '}
+                                                    {socials?.github ? (
+                                                        <a href={normalizeUrl(socials.github)} target="_blank" rel="noopener noreferrer" className="text-green-400 underline decoration-yellow-500">
+                                                            {socials.github}
+                                                        </a>
+                                                    ) : (
+                                                        <span className="text-green-400">N/A</span>
+                                                    )}
+                                                    ,
+                                                </div>
+
+                                                <div>
+                                                    <span className="text-yellow-500">val</span> <span className="text-yellow-200">linkedin</span>: <span className="text-yellow-300">String</span> ={' '}
+                                                    {socials?.linkedin ? (
+                                                        <a href={normalizeUrl(socials.linkedin)} target="_blank" rel="noopener noreferrer" className="text-green-400 underline decoration-yellow-500">
+                                                            {socials.linkedin}
+                                                        </a>
+                                                    ) : (
+                                                        <span className="text-green-400">N/A</span>
+                                                    )}
+                                                    ,
+                                                </div>
+
+                                                <div>
+                                                    <span className="text-yellow-500">val</span> <span className="text-yellow-200">twitter</span>: <span className="text-yellow-300">String</span> ={' '}
+                                                    {socials?.twitter ? (
+                                                        <a href={normalizeUrl(socials.twitter)} target="_blank" rel="noopener noreferrer" className="text-green-400 underline decoration-yellow-500">
+                                                            {socials.twitter}
+                                                        </a>
+                                                    ) : (
+                                                        <span className="text-green-400">N/A</span>
+                                                    )}
+                                                </div>
+                                            </div>
+
+                                            <div className="text-yellow-300">)</div>
                                         </code>
                                     )}
                                 </pre>
