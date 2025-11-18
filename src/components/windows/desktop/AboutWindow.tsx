@@ -167,7 +167,7 @@ export default function AboutWindow({
                                             <span className="text-yellow-500">data class</span> <span className="text-yellow-300">Developer</span>{'(\n'}
                                             {'    '}<span className="text-yellow-500">val</span> <span className="text-yellow-200">name</span>: <span className="text-yellow-300">String</span> = <span className="text-green-400 break-words">"{fullName}"</span>,<br/>
                                             {'    '}<span className="text-yellow-500">val</span> <span className="text-yellow-200">role</span>: <span className="text-yellow-300">String</span> = <span className="text-green-400 break-words">"{role}"</span>,<br/>
-                                            {'    '}<span className="text-yellow-500">val</span> <span className="text-yellow-200">bio</span>: <span className="text-yellow-300">String</span> = <span className="text-green-400 break-words">"{aboutMe}"</span>,<br/>
+                                            {'    '}<span className="text-yellow-500">val</span> <span className="text-yellow-200">bio</span>: <span className="text-yellow-300">String</span> = <span className="text-green-400 break-words">"""{aboutMe}"""</span>,<br/>
                                             {'    '}<span className="text-yellow-500">val</span> <span className="text-yellow-200">openToWork</span>: <span className="text-yellow-300">Boolean</span> = <span className="text-blue-400">true</span><br/>
                                             {')'}
                                         </code>
