@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import TerminalWindow from "../components/windows/desktop/TerminalWindow.tsx";
 import DockBar from "../components/DockBar";
 import DraggableWindow from "../components/windows/desktop/DraggableWindow.tsx";
+import HRNoticeWindow from "../components/windows/desktop/HRNoticeWindow.tsx";
 
 import terminalIcon from "../assets/terminal-icon.png";
 import DesktopImage from "../assets/desktop-background.gif";
@@ -19,7 +20,7 @@ import backgroundAudio from "../assets/audio.mp3";
 import AboutWindow from "../components/windows/desktop/AboutWindow.tsx";
 import PacmanWindow from "../components/windows/games/PacmanWindow.tsx";
 
-export default function DesktopScreen() {
+export default function DesktopScreen({ hrBypass = false }: { hrBypass?: boolean }) {
     const [terminalOpen, setTerminalOpen] = useState(false);
     const [windows, setWindows] = useState<{ id: string; title: string; url: string }[]>([]);
 
@@ -29,6 +30,7 @@ export default function DesktopScreen() {
     const [emailOpen, setEmailOpen] = useState(false);
     const [testimonialsOpen, setTestimonialsOpen] = useState(false);
     const [pacmanOpen, setPacmanOpen] = useState(false);
+    const [hrNoticeOpen, setHrNoticeOpen] = useState(false);
 
     const [musicPlaying, setMusicPlaying] = useState(true);
     const audioRef = useRef<HTMLAudioElement>(null);
@@ -64,6 +66,12 @@ export default function DesktopScreen() {
             document.removeEventListener('touchend', preventZoom);
         };
     }, []);
+
+    useEffect(() => {
+        if (hrBypass) {
+            setHrNoticeOpen(true);
+        }
+    }, [hrBypass]);
 
     const handleLogout = () => window.location.reload();
 
@@ -216,6 +224,10 @@ export default function DesktopScreen() {
                         onClose={() => handleCloseWindow(win.id)}
                     />
                 ))}
+
+                {hrNoticeOpen && (
+                    <HRNoticeWindow onClose={() => setHrNoticeOpen(false)} />
+                )}
             </div>
 
             {/* Dock Bar - Fixed at bottom */}

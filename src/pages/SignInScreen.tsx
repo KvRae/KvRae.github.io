@@ -9,6 +9,7 @@ import * as React from "react";
 
 export default function SignInScreen() {
     const [authenticated, setAuthenticated] = useState(false);
+    const [hrBypass, setHrBypass] = useState(false);
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [terminalOpen, setTerminalOpen] = useState(false);
@@ -100,7 +101,7 @@ export default function SignInScreen() {
         };
     }, []);
 
-    if (authenticated) return <DesktopScreen />;
+    if (authenticated) return <DesktopScreen hrBypass={hrBypass} />;
 
     return (
         <div className="relative h-screen w-screen inset-0 overflow-hidden bg-[#0b0b0d]">
@@ -152,9 +153,19 @@ export default function SignInScreen() {
                     </span>
                 </div>
 
-                {/* Terminal Button */}
-                <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-30 ">
+                {/* Terminal Button & HR Button */}
+                <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3">
                     <TerminalButton onClick={() => setTerminalOpen(true)} />
+                    <button
+                        onClick={() => {
+                            setHrBypass(true);
+                            setAuthenticated(true);
+                        }}
+                        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-yellow-500 hover:bg-yellow-400 active:bg-yellow-600 text-black font-bold text-[14px] sm:text-xs flex flex-col items-center justify-center leading-tight transition shadow-[0_0_8px_rgba(255,215,0,0.5)] touch-manipulation cursor-pointer"
+                        title="HR Portal - No password needed!">
+                        <span>I'm</span>
+                        <span>HR</span>
+                    </button>
                 </div>
             </div>
 
