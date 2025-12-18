@@ -40,7 +40,9 @@ export default function AboutWindow({
         setIsMaximized(!isMaximized);
     };
 
-    const windowStyle = isMaximized ? { maxHeight: "calc(100vh - 110px)" } : undefined;
+    const windowStyle = isMaximized
+        ? { height: "calc(100vh - 110px)", maxHeight: "calc(100vh - 110px)", minHeight: "calc(100vh - 110px)" }
+        : undefined;
 
     const codeContent = {
         profile: `data class Developer(\n    val name: String = "${fullName}",\n    val role: String = "${role}",\n    val bio: String = "${aboutMe}",\n    val passionate: Boolean = true\n)`,
