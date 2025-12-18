@@ -50,7 +50,7 @@ export default function HRNoticeWindow({ onClose }: HRNoticeWindowProps) {
                             onClick={onClose}
                             className="px-3 py-2 rounded-md bg-yellow-500 text-black font-semibold hover:bg-yellow-400 active:bg-yellow-600 shadow-[0_0_8px_rgba(255,215,0,0.35)] transition"
                         >
-                            thank u
+                            Thank u
                         </button>
                     </div>
                 </div>
