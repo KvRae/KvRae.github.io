@@ -10,7 +10,7 @@ export default function HRNoticeWindow({ onClose }: HRNoticeWindowProps) {
             <div className="bg-[#0d0d0f]/95 border border-yellow-800/40 rounded-xl shadow-[0_0_15px_rgba(255,215,0,0.15)] w-full max-w-xl overflow-hidden text-yellow-100">
                 {/* Header */}
                 <div className="flex items-center space-x-2 px-3 py-2 bg-[#1a1a1d] border-b border-yellow-800/30 rounded-t-xl">
-                    <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer" onClick={onClose} />
+                    <div className="w-3 h-3 bg-red-500 rounded-full cursor-pointer hover:bg-red-600 transition" onClick={onClose} />
                     <div className="w-3 h-3 bg-yellow-500 rounded-full" />
                     <div className="w-3 h-3 bg-green-500 rounded-full" />
                     <span className="ml-2 font-semibold text-yellow-200">Welcome Message</span>

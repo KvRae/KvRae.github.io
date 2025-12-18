@@ -3,6 +3,8 @@ import aboutData from "../../../data/about.json";
 
 interface AboutWindowProps {
     onClose: () => void;
+    onMinimize?: () => void;
+    isMinimized?: boolean;
     avatar?: string;
     fullName?: string;
     role?: string;
@@ -20,6 +22,8 @@ interface AboutWindowProps {
 
 export default function AboutWindow({
                                         onClose,
+                                        onMinimize,
+                                        isMinimized = false,
                                         avatar = aboutData.avatar,
                                         fullName = aboutData.fullName,
                                         role = aboutData.role,
@@ -30,6 +34,13 @@ export default function AboutWindow({
                                         socials = aboutData.socials
                                     }: AboutWindowProps) {
     const [activeTab, setActiveTab] = useState<"profile" | "skills" | "contact">("profile");
+    const [isMaximized, setIsMaximized] = useState(false);
+
+    const toggleMaximize = () => {
+        setIsMaximized(!isMaximized);
+    };
+
+    const windowStyle = isMaximized ? { maxHeight: "calc(100vh - 110px)" } : undefined;
 
     const codeContent = {
         profile: `data class Developer(\n    val name: String = "${fullName}",\n    val role: String = "${role}",\n    val bio: String = "${aboutMe}",\n    val passionate: Boolean = true\n)`,
@@ -47,16 +58,23 @@ export default function AboutWindow({
         return `https://${u}`;
     };
 
+    if (isMinimized) return null;
+
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-2 sm:p-4">
-            <div className="bg-[#0d0d0f]/95 border border-yellow-800/40 rounded-xl shadow-[0_0_15px_rgba(255,215,0,0.15)] w-full max-w-3xl h-[600px] overflow-hidden text-yellow-100 flex flex-col">
+            <div
+                className={`bg-[#0d0d0f]/95 border border-yellow-800/40 rounded-xl shadow-[0_0_15px_rgba(255,215,0,0.15)] w-full overflow-hidden text-yellow-100 flex flex-col transition-all duration-300 ${
+                    isMaximized ? 'max-w-full' : 'max-w-3xl h-[600px]'
+                }`}
+                style={windowStyle}
+            >
                 {/* Android Studio Header - Mac Style */}
                 <div className="flex items-center justify-between px-2 sm:px-3 py-2 bg-[#1a1a1d] border-b border-yellow-800/30 rounded-t-xl flex-shrink-0">
                     <div className="flex items-center space-x-2">
                         <div className="flex items-center space-x-2">
-                            <button className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-600 transition" onClick={onClose}></button>
-                            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                            <button className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-600 transition cursor-pointer" onClick={onClose}></button>
+                            <button className="w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-600 transition cursor-pointer" onClick={onMinimize}></button>
+                            <button className="w-3 h-3 bg-green-500 rounded-full hover:bg-green-600 transition cursor-pointer" onClick={toggleMaximize}></button>
                         </div>
                         <span className="ml-2 sm:ml-3 font-semibold text-yellow-200">com.kvrae.about</span>
                         <span className="text-[10px] sm:text-xs text-yellow-400 ml-1">●</span>

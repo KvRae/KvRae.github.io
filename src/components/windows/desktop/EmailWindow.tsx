@@ -4,17 +4,28 @@ import { EMAIL_PUBLIC_KEY, EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID } from "../../../
 
 interface EmailWindowProps {
     onClose: () => void;
+    onMinimize?: () => void;
+    isMinimized?: boolean;
     defaultRecipient?: string;
 }
 
 export default function EmailWindow({
                                         onClose,
+                                        onMinimize,
+                                        isMinimized = false,
                                         defaultRecipient = "karam.mannai@hotmail.com",
                                     }: EmailWindowProps) {
     const [sender, setSender] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState("");
+    const [isMaximized, setIsMaximized] = useState(false);
+
+    const toggleMaximize = () => {
+        setIsMaximized(!isMaximized);
+    };
+
+    const windowStyle = isMaximized ? { maxHeight: "calc(100vh - 110px)" } : undefined;
 
     const handleSend = (e: FormEvent) => {
         e.preventDefault();
@@ -48,18 +59,28 @@ export default function EmailWindow({
             );
     };
 
+    if (isMinimized) return null;
+
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-4">
-            <div className="bg-[#0d0d0f]/95 border border-yellow-800/40 rounded-xl shadow-[0_0_15px_rgba(255,215,0,0.15)] w-full max-w-md max-h-[90vh] overflow-y-auto text-yellow-100">
+            <div className={`bg-[#0d0d0f]/95 border border-yellow-800/40 rounded-xl shadow-[0_0_15px_rgba(255,215,0,0.15)] w-full overflow-y-auto text-yellow-100 transition-all duration-300 ${
+                isMaximized ? 'max-w-full h-full' : 'max-w-md max-h-[90vh]'
+            }`} style={windowStyle}>
 
                 {/* Header */}
                 <div className="flex items-center space-x-2 px-3 py-2 bg-[#1a1a1d] border-b border-yellow-800/30 rounded-t-xl">
                     <div
-                        className="w-3 h-3 bg-red-500 rounded-full cursor-pointer"
+                        className="w-3 h-3 bg-red-500 rounded-full cursor-pointer hover:bg-red-600 transition"
                         onClick={onClose}
                     />
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full" />
-                    <div className="w-3 h-3 bg-green-500 rounded-full" />
+                    <div
+                        className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer hover:bg-yellow-600 transition"
+                        onClick={onMinimize}
+                    />
+                    <div
+                        className="w-3 h-3 bg-green-500 rounded-full cursor-pointer hover:bg-green-600 transition"
+                        onClick={toggleMaximize}
+                    />
                     <span className="ml-2 font-semibold text-yellow-200">Send Email</span>
                 </div>
 

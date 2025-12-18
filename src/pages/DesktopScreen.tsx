@@ -32,6 +32,15 @@ export default function DesktopScreen({ hrBypass = false }: { hrBypass?: boolean
     const [pacmanOpen, setPacmanOpen] = useState(false);
     const [hrNoticeOpen, setHrNoticeOpen] = useState(false);
 
+    // Minimize states
+    const [terminalMinimized, setTerminalMinimized] = useState(false);
+    const [aboutMinimized, setAboutMinimized] = useState(false);
+    const [projectsMinimized, setProjectsMinimized] = useState(false);
+    const [experienceMinimized, setExperienceMinimized] = useState(false);
+    const [emailMinimized, setEmailMinimized] = useState(false);
+    const [testimonialsMinimized, setTestimonialsMinimized] = useState(false);
+    const [pacmanMinimized, setPacmanMinimized] = useState(false);
+
     const [musicPlaying, setMusicPlaying] = useState(true);
     const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -231,6 +240,83 @@ export default function DesktopScreen({ hrBypass = false }: { hrBypass?: boolean
             </div>
 
             {/* Dock Bar - Fixed at bottom */}
+            {/* Minimized Windows Taskbar */}
+            {(terminalMinimized || aboutMinimized || projectsMinimized || experienceMinimized ||
+              emailMinimized || testimonialsMinimized || pacmanMinimized) && (
+                <div className="fixed bottom-16 left-1/2 transform -translate-x-1/2 z-30 bg-[#1a1a1d]/90 backdrop-blur-sm border border-yellow-800/40 rounded-xl px-3 py-2 flex gap-2 shadow-[0_0_15px_rgba(255,215,0,0.2)]">
+                    {terminalMinimized && (
+                        <button
+                            onClick={() => setTerminalMinimized(false)}
+                            className="flex flex-col items-center px-3 py-1 hover:bg-yellow-800/20 rounded transition"
+                            title="Restore Terminal"
+                        >
+                            <img src={terminalIcon} alt="Terminal" className="w-8 h-8" />
+                            <span className="text-yellow-200 text-xs mt-1">Terminal</span>
+                        </button>
+                    )}
+                    {aboutMinimized && (
+                        <button
+                            onClick={() => setAboutMinimized(false)}
+                            className="flex flex-col items-center px-3 py-1 hover:bg-yellow-800/20 rounded transition"
+                            title="Restore About"
+                        >
+                            <img src={AvatarIcon} alt="About" className="w-8 h-8" />
+                            <span className="text-yellow-200 text-xs mt-1">About</span>
+                        </button>
+                    )}
+                    {projectsMinimized && (
+                        <button
+                            onClick={() => setProjectsMinimized(false)}
+                            className="flex flex-col items-center px-3 py-1 hover:bg-yellow-800/20 rounded transition"
+                            title="Restore Projects"
+                        >
+                            <img src={FolderIcon} alt="Projects" className="w-8 h-8" />
+                            <span className="text-yellow-200 text-xs mt-1">Projects</span>
+                        </button>
+                    )}
+                    {experienceMinimized && (
+                        <button
+                            onClick={() => setExperienceMinimized(false)}
+                            className="flex flex-col items-center px-3 py-1 hover:bg-yellow-800/20 rounded transition"
+                            title="Restore Experience"
+                        >
+                            <img src={FolderIcon} alt="Experience" className="w-8 h-8" />
+                            <span className="text-yellow-200 text-xs mt-1">Experience</span>
+                        </button>
+                    )}
+                    {emailMinimized && (
+                        <button
+                            onClick={() => setEmailMinimized(false)}
+                            className="flex flex-col items-center px-3 py-1 hover:bg-yellow-800/20 rounded transition"
+                            title="Restore Email"
+                        >
+                            <img src={EmailIcon} alt="Email" className="w-8 h-8" />
+                            <span className="text-yellow-200 text-xs mt-1">Email</span>
+                        </button>
+                    )}
+                    {testimonialsMinimized && (
+                        <button
+                            onClick={() => setTestimonialsMinimized(false)}
+                            className="flex flex-col items-center px-3 py-1 hover:bg-yellow-800/20 rounded transition"
+                            title="Restore Testimonials"
+                        >
+                            <img src={TestimonialsIcon} alt="Testimonials" className="w-8 h-8" />
+                            <span className="text-yellow-200 text-xs mt-1">Testimonials</span>
+                        </button>
+                    )}
+                    {pacmanMinimized && (
+                        <button
+                            onClick={() => setPacmanMinimized(false)}
+                            className="flex flex-col items-center px-3 py-1 hover:bg-yellow-800/20 rounded transition"
+                            title="Restore Kav-Man"
+                        >
+                            <img src={PacmanIcon} alt="Kav-Man" className="w-8 h-8" />
+                            <span className="text-yellow-200 text-xs mt-1">Kav-Man</span>
+                        </button>
+                    )}
+                </div>
+            )}
+
             {/* DockBar - fixed bottom */}
             <div  className="fixed bottom-0 left-0 w-full z-20" >
                 <DockBar

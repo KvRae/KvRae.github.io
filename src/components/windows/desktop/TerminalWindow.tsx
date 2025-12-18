@@ -4,6 +4,8 @@ import TerminalInput from "../../TerminalInput.tsx";
 
 interface TerminalWindowProps {
     onClose: () => void;
+    onMinimize?: () => void;
+    isMinimized?: boolean;
 }
 
 interface Command {
@@ -11,7 +13,7 @@ interface Command {
     output: string;
 }
 
-export default function TerminalWindow({ onClose }: TerminalWindowProps) {
+export default function TerminalWindow({ onClose, onMinimize, isMinimized = false }: TerminalWindowProps) {
     const [history, setHistory] = useState<string[]>([
         `██╗  ██╗██╗   ██╗██████╗        ██████╗ ███████╗
 ██║ ██╔╝██║   ██║██╔══██╗      ██╔═══██╗██╔════╝
@@ -22,8 +24,17 @@ export default function TerminalWindow({ onClose }: TerminalWindowProps) {
         "Welcome to my custom console. Type 'help' to display all the commands."
     ]);
     const commands: Record<string, Command> = commandsData;
+    const [isMaximized, setIsMaximized] = useState(false);
 
     const terminalRef = useRef<HTMLDivElement>(null);
+
+    const toggleMaximize = () => {
+        setIsMaximized(!isMaximized);
+    };
+
+    const maxHeightStyle = isMaximized
+        ? { height: "calc(100vh - 110px)", maxHeight: "calc(100vh - 110px)" }
+        : undefined;
 
     useEffect(() => {
         terminalRef.current?.scrollTo({
@@ -59,6 +70,8 @@ export default function TerminalWindow({ onClose }: TerminalWindowProps) {
         }
     };
 
+    if (isMinimized) return null;
+
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
             {/* Dimmer overlay */}
@@ -70,10 +83,13 @@ export default function TerminalWindow({ onClose }: TerminalWindowProps) {
 
             {/* Modal window */}
             <div
-                className="relative bg-[#0b0b0d] text-yellow-400 rounded-xl shadow-[0_0_25px_rgba(255,215,0,0.3)] w-full max-w-4xl max-h-[70vh] flex flex-col border border-yellow-800/40 font-mono"
+                className={`relative bg-[#0b0b0d] text-yellow-400 rounded-xl shadow-[0_0_25px_rgba(255,215,0,0.3)] w-full flex flex-col border border-yellow-800/40 font-mono transition-all duration-300 ${
+                    isMaximized ? 'max-w-full' : 'max-w-4xl max-h-[70vh]'
+                }`}
                 role="dialog"
                 aria-modal="true"
                 onClick={(e) => e.stopPropagation()}
+                style={maxHeightStyle}
             >
                 {/* Header */}
                 <div className="flex items-center gap-2 px-3 py-2 bg-[#1a1a10] border-b border-yellow-800/40 rounded-t-xl">
@@ -81,8 +97,14 @@ export default function TerminalWindow({ onClose }: TerminalWindowProps) {
                         className="w-3 h-3 bg-red-500 rounded-full cursor-pointer hover:bg-red-600 transition"
                         onClick={onClose}
                     ></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div
+                        className="w-3 h-3 bg-yellow-500 rounded-full cursor-pointer hover:bg-yellow-600 transition"
+                        onClick={onMinimize}
+                    ></div>
+                    <div
+                        className="w-3 h-3 bg-green-500 rounded-full cursor-pointer hover:bg-green-600 transition"
+                        onClick={toggleMaximize}
+                    ></div>
                     <span className="ml-2 font-semibold text-yellow-200 select-none">Terminal</span>
                 </div>
 
