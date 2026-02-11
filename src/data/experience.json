@@ -2,7 +2,7 @@
   {
     "logoUrl": "/img/mfz-pixel.png",
     "role": "Android Developer",
-    "company": "ازافم",
+    "company": "Mafaza",
     "period": "Oct 2025 – Jan 2026",
     "description": [
       "Built Ainan Salsabila Android app using Kotlin and Jetpack Compose.",
@@ -14,7 +14,7 @@
     "logoUrl": "/img/nexura-pixel.png",
     "role": "Mobile Application Developer",
     "company": "Nexaura Technologies",
-    "period": "Nov 2025 – Dec 2025",
+    "period": "Aug 2025 – Sep 2025",
     "description": [
       "Worked on the Docs (Bright Check) module in the Thryve mobile app.",
       "Collaborated with the team to implement features and ensure smooth UI."
@@ -32,7 +32,7 @@
   },
   {
     "logoUrl": "/img/mtk-pixel.png",
-    "role": "Android Engineer",
+    "role": "Android Engineering Intern",
     "company": "machinestalk Tunisia",
     "period": "Jan 2024 – Jul 2024",
     "description": [
@@ -54,8 +54,8 @@
   },
   {
     "logoUrl": "/img/bax-pixel.png",
-    "role": "Freelance Developer",
-    "company": "Upwork",
+    "role": "Mobile SDK Developer",
+    "company": "BackAppX",
     "period": "May 2021 – Dec 2022",
     "description": [
       "Delivered mobile features, bug fixes, and backend enhancements.",
@@ -64,7 +64,7 @@
   },
   {
     "logoUrl": "/img/tt-pixel.png",
-    "role": "Software Developer",
+    "role": "Software Developer Intern",
     "company": "Tunisie Telecom",
     "period": "Jul 2022 – Sep 2022",
     "description": [
