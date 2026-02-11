@@ -2,76 +2,91 @@
   {
     "logoUrl": "/img/mfz-pixel.png",
     "role": "Android Developer",
-    "company": "Mafazaa",
-    "period": "Oct 2025 – Present",
+    "company": "ازافم",
+    "period": "Oct 2025 – Jan 2026",
     "description": [
-      "Contributed to building a user-friendly Android app using Kotlin and Jetpack Compose.",
-      "Reviewed code and collaborated with cross-functional teams to ensure high-quality deliverables.",
-        "Implemented new features and optimized app performance based on user feedback."
+      "Built Ainan Salsabila Android app using Kotlin and Jetpack Compose.",
+      "Improved UI, added system-wide Dark Theme, and refactored modules.",
+      "Set up CI/CD with GitHub Actions and Firebase App Distribution."
+    ]
+  },
+  {
+    "logoUrl": "/img/nexaura-pixel.png",
+    "role": "Mobile Application Developer",
+    "company": "Nexaura Technologies",
+    "period": "Nov 2025 – Dec 2025",
+    "description": [
+      "Worked on the Docs (Bright Check) module in the Thryve mobile app.",
+      "Collaborated with the team to implement features and ensure smooth UI."
     ]
   },
   {
     "logoUrl": "/img/pp-pixel.png",
-    "role": "UI Developer",
-    "company": "PlutopalAI",
-    "period": "Nov 2024 – Jul 2025",
+    "role": "Mobile Developer (UI Focused)",
+    "company": "Plutopal.ai",
+    "period": "Nov 2024 – Aug 2025",
     "description": [
-      "Created a clean, responsive UI from Figma designs using React.",
-      "Translated UI/UX requirements into functional web interfaces."
+      "Built and maintained reusable mobile/web UI components.",
+      "Collaborated with engineers to translate requirements into scalable UI."
     ]
   },
   {
     "logoUrl": "/img/mtk-pixel.png",
-    "role": "Mobile Engineer",
-    "company": "Machinestalk",
+    "role": "Android Engineer",
+    "company": "machinestalk Tunisia",
     "period": "Jan 2024 – Jul 2024",
     "description": [
-      "Built cross-platform car-sharing features in Flutter and Google Maps API with consistent UI/UX.",
-      "Integrated REST APIs for booking, tracking, and vehicle control.",
-      "Worked closely with backend and design teams to deliver smooth user flows."
+      "Developed BLE-based indoor navigation engine with SceneView.",
+      "Designed responsive Jetpack Compose UI, optimized for battery and performance.",
+      "Implemented CI/CD pipelines and worked in Agile/Scrum environment."
     ]
   },
   {
     "logoUrl": "/img/slk-pixel.png",
-    "role": "Mobile Developer",
+    "role": "Mobile Engineer",
     "company": "Slikoo",
     "period": "Jul 2023 – Dec 2023",
     "description": [
-      "Developed cross-platform app using Flutter and Firebase (Auth, Firestore).",
-      "Implemented real-time features and optimized performance across Android/iOS.",
-      "Participated in Agile sprints, code reviews, and QA testing sessions."
+      "Developed mobile apps using MVVM + Clean Architecture.",
+      "Used Coroutines and Flows for async programming.",
+      "Monitored performance, fixed bugs, and ensured smooth UX."
     ]
   },
   {
     "logoUrl": "/img/bax-pixel.png",
-    "role": "Full Stack Developer",
-    "company": "BackAppX",
-    "period": "Jan 2023 – Jun 2023",
+    "role": "Freelance Developer",
+    "company": "Upwork",
+    "period": "May 2021 – Dec 2022",
     "description": [
-      "Led a team of 5 to develop a BaaS platform and publish SDKs to npm/pub.dev.",
-      "Built Express/MongoDB backend and Flutter-based SDK."
+      "Delivered mobile features, bug fixes, and backend enhancements.",
+      "Managed projects independently across different industries."
     ]
   },
   {
     "logoUrl": "/img/tt-pixel.png",
-    "role": "Fullstack Developer",
+    "role": "Software Developer",
     "company": "Tunisie Telecom",
     "period": "Jul 2022 – Sep 2022",
     "description": [
-      "Collaborated with cross-functional teams to gather requirements and deliver high-quality updates.",
-      "Assisted in refining the app's user interface based on feedback and design guidelines.",
-      "Documented changes and updates made to the app to support ongoing development and team collaboration"
+      "Implemented app updates and refined UI based on feedback.",
+      "Documented changes to support ongoing development and collaboration."
     ]
   },
   {
     "logoUrl": "/img/bl-pixel.png",
     "role": "Android Game Developer",
-    "company": "BeadsLeads",
-    "period": "Feb 2021 – Jul 2022",
+    "company": "Self-Employed",
+    "period": "Feb 2021 – Jun 2022",
     "description": [
-      "Organized development workflow and task distribution.",
-      "Developed and launched 2D game on Itch.io and Huawei AppGallery using Unity3D and PlayFab.",
-      "Managed entire game lifecycle from concept to release."
+      "Designed and developed Beads Leads and Easy Kitchen puzzle games in Unity3D.",
+      "Handled full development cycle from concept to Play Store and Huawei AppGallery release.",
+      "Managed game logic, UI, and user engagement mechanics."
+    ],
+    "links": [
+      {
+        "name": "Huawei AppGallery",
+        "url": "https://appgallery.huawei.com/#/app/C116762135"
+      }
     ]
   }
 ]
