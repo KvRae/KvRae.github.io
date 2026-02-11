@@ -13,7 +13,7 @@
   },
   {
     "name": "AiFashionWeek MVP",
-    "description": "Social Fashion Application (Figma, React, Builder.io)",
+    "description": "Social Fashion Application (Figma, React, Flutter, Builder.io)",
     "link": "https://aifashionweek.ai/"
   },
   {
@@ -32,16 +32,17 @@
   },
   {
     "name": "Slikoo",
-    "description": "E-commerce mobile platform (React, Symfony, Android)",
+    "description": "E-commerce mobile platform (Android, Symfony)",
     "link": "https://www.slikoo.com",
     "github": "",
     "playstore": "https://play.google.com/store/apps/details?id=com.slikoo.slikoo&hl=en"
   },
   {
     "name": "Easy Kitchen",
-    "description": "Food recipes mobile application(Flutter, Firebase, Android, IOS, NodeJs, Docker).",
+    "description": "Food recipes mobile application(Android, IOS, Firebase, NodeJs, Docker).",
     "link": "https://kvrae.github.io/EasyKitchenWebsite/",
-    "github": "https://github.com/KvRae/Easy-Kitchen"
+    "github": "https://github.com/KvRae/Easy-Kitchen",
+    "playstore": "https://appgallery.huawei.com/#/app/C116762135"
   },
   {
     "name": "BeadsLeads",
