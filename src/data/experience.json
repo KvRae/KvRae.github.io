@@ -1,23 +1,48 @@
+
 [
+  {
+    "logoUrl": "/img/micla-pixel.jpg",
+    "role": "Android/Backend Engineer",
+    "company": "MICLA Engineering & Design",
+    "period": "May 2026 – Present",
+    "description": [
+      "Implemented local database encryption using SQLCipher and integrated PowerSync for offline-first bidirectional synchronization.",
+      "Integrated LiveKit SDK with Jetpack Compose for real-time audio and video streaming.",
+      "Built responsive Jetpack Compose interfaces integrated with Node.js and PostgreSQL REST APIs.",
+      "Deployed self-hosted geolocation and routing infrastructure using MapLibre, Valhalla, and Photon."
+    ]
+  },
+  {
+    "logoUrl": "/img/oxton-pixel.jpg",
+    "role": "Android Developer",
+    "company": "Oxton Digital",
+    "period": "Feb 2026 – May 2026",
+    "description": [
+      "Contributed to modernizing a legacy Android codebase, migrating from Java to Kotlin.",
+      "Designed migration strategies involving Jetpack Compose, MVVM, and Clean Architecture.",
+      "Analyzed multi-app architecture built around shared core libraries and modules.",
+      "Worked with Hilt and documented migration guidelines and architectural decisions."
+    ]
+  },
   {
     "logoUrl": "/img/mfz-pixel.png",
     "role": "Android Developer",
     "company": "Mafaza",
-    "period": "Oct 2025 – Jan 2026",
+    "period": "Oct 2025 – Feb 2026",
     "description": [
-      "Built Ainan Salsabila Android app using Kotlin and Jetpack Compose.",
-      "Improved UI, added system-wide Dark Theme, and refactored modules.",
-      "Set up CI/CD with GitHub Actions and Firebase App Distribution."
+      "Contributed to Ainan Salsabila, an Android parental-control application built with Kotlin.",
+      "Implemented CI/CD automation using GitHub Actions and Firebase App Distribution.",
+      "Performed debugging, refactoring, and stability improvements across app modules.",
+      "Improved UI consistency and introduced system-wide Dark Theme support using Material Design 3."
     ]
   },
   {
     "logoUrl": "/img/nexura-pixel.png",
     "role": "Mobile Application Developer",
     "company": "Nexaura Technologies",
-    "period": "Aug 2025 – Sep 2025",
+    "period": "Sep 2025 – Sep 2025",
     "description": [
-      "Worked on the Docs (Bright Check) module in the Thryve mobile app.",
-      "Collaborated with the team to implement features and ensure smooth UI."
+      "Contributed to the Docs (Bright Check) module in the Thryve mobile application."
     ]
   },
   {
@@ -26,67 +51,55 @@
     "company": "Plutopal.ai",
     "period": "Nov 2024 – Aug 2025",
     "description": [
-      "Built and maintained reusable mobile/web UI components.",
-      "Collaborated with engineers to translate requirements into scalable UI."
+      "Built and maintained reusable mobile and web UI components aligned with backend APIs and product requirements.",
+      "Collaborated with engineers and product teams to translate requirements into scalable frontend architecture.",
+      "Improved UI performance, maintainability, and consistency across the platform.",
+      "Participated in technical discussions to optimize component reuse and backend integration."
     ]
   },
   {
     "logoUrl": "/img/mtk-pixel.png",
-    "role": "Android Engineering Intern",
-    "company": "machinestalk Tunisia",
+    "role": "Android Engineer",
+    "company": "iot squared Tunisia",
     "period": "Jan 2024 – Jul 2024",
     "description": [
-      "Developed BLE-based indoor navigation engine with SceneView.",
-      "Designed responsive Jetpack Compose UI, optimized for battery and performance.",
-      "Implemented CI/CD pipelines and worked in Agile/Scrum environment."
+      "Developed a BLE-based indoor navigation engine using Kotlin and SceneView for real-time 3D positioning.",
+      "Designed responsive, battery-optimized Jetpack Compose UI components using Figma.",
+      "Applied Agile/Scrum practices with Jira, FigJam, and Slack.",
+      "Implemented CI/CD pipelines for automated documentation and demo deployment."
     ]
   },
   {
     "logoUrl": "/img/slk-pixel.png",
-    "role": "Mobile Engineer",
+    "role": "Android Engineer",
     "company": "Slikoo",
     "period": "Jul 2023 – Dec 2023",
     "description": [
-      "Developed mobile apps using MVVM + Clean Architecture.",
-      "Used Coroutines and Flows for async programming.",
-      "Monitored performance, fixed bugs, and ensured smooth UX."
+      "Designed and developed a mobile application using MVVM and Clean Architecture.",
+      "Utilized Kotlin Coroutines and Flows for asynchronous programming.",
+      "Monitored app performance, resolved bugs, and collaborated with cross-functional teams to improve user experience."
     ]
   },
   {
     "logoUrl": "/img/bax-pixel.png",
-    "role": "Mobile SDK Developer",
-    "company": "BackAppX",
+    "role": "Freelance Software Developer",
+    "company": "Upwork",
     "period": "May 2021 – Dec 2022",
     "description": [
-      "Delivered mobile features, bug fixes, and backend enhancements.",
-      "Managed projects independently across different industries."
+      "Delivered client solutions, including mobile app features, bug fixes, and backend enhancements using Kotlin, Node.js, and MongoDB.",
+      "Managed project scopes, timelines, and deliverables independently.",
+      "Adapted to different codebases and client requirements across multiple industries."
     ]
   },
   {
     "logoUrl": "/img/tt-pixel.png",
-    "role": "Software Developer Intern",
+    "role": "Mobile Developer",
     "company": "Tunisie Telecom",
     "period": "Jul 2022 – Sep 2022",
     "description": [
-      "Implemented app updates and refined UI based on feedback.",
-      "Documented changes to support ongoing development and collaboration."
-    ]
-  },
-  {
-    "logoUrl": "/img/bl-pixel.png",
-    "role": "Android Game Developer",
-    "company": "Self-Employed",
-    "period": "Feb 2021 – Jun 2022",
-    "description": [
-      "Designed and developed Beads Leads and Easy Kitchen puzzle games in Unity3D.",
-      "Handled full development cycle from concept to Play Store and Huawei AppGallery release.",
-      "Managed game logic, UI, and user engagement mechanics."
-    ],
-    "links": [
-      {
-        "name": "Huawei AppGallery",
-        "url": "https://appgallery.huawei.com/#/app/C116762135"
-      }
+      "Collaborated with cross-functional teams to gather requirements and deliver application updates.",
+      "Refined UI based on feedback and design guidelines.",
+      "Documented application changes to support ongoing development and collaboration."
     ]
   }
 ]
